@@ -1,17 +1,17 @@
 import { cva } from "class-variance-authority";
 import { ComponentProps } from "react";
 
-type TLineVariants = "y" | "x" | "x-y" | "r" | "b";
+type TLineVariants = "y" | "x" | "x-y" | "t" | "l" | "r" | "b";
 // type TLineVariants = "t" | "b" | "l" | "r" | "y" | "x" | "x-y";
-const lineVariants = cva("flex items-center justify-center w-full", {
+const lineVariants = cva("relative flex items-center justify-center w-full", {
   variants: {
     fullBorder: {
-      //   t: "w-full border-border flex items-center justify-center relative after:bg-border before:bg-border border-t",
-      b: "relative w-full border-border flex items-center justify-center before:bg-border before:w-screen before:h-px before:content-[''] before:absolute before:bottom-0",
-      l: "relative before:content-[''] before:absolute before:w-px before:left-0 before:h-full before:bg-border",
-      r: "relative after:content-[''] after:absolute after:w-px after:right-0 after:h-full after:bg-border",
-      y: "relative w-full before:bg-border before:w-screen before:h-px before:content-[''] before:absolute before:top-0  after:content-[''] after:absolute after:w-screen after:h-px after:bottom-0 after:bg-border",
-      x: "relative border-border before:bg-border before:h-full before:w-px before:content-[''] before:absolute before:left-0 after:content-[''] after:absolute after:w-px after:right-0 after:h-full after:bg-border",
+      t: "before:content-[''] before:absolute before:h-px before:w-full before:top-0 before:bg-border",
+      b: "w-full border-border flex items-center justify-center before:bg-border before:w-screen before:h-px before:content-[''] before:absolute before:bottom-0",
+      l: "before:content-[''] before:absolute before:w-px before:left-0 before:h-full before:bg-border",
+      r: " after:content-[''] after:absolute after:w-px after:right-0 after:h-full after:bg-border",
+      y: "w-full before:bg-border before:w-screen before:h-px before:content-[''] before:absolute before:top-0  after:content-[''] after:absolute after:w-screen after:h-px after:bottom-0 after:bg-border",
+      x: "border-border before:bg-border before:h-full before:w-px before:content-[''] before:absolute before:left-0 after:content-[''] after:absolute after:w-px after:right-0 after:h-full after:bg-border",
       "x-y": "border border-border items-center justify-center",
     },
     border: {
