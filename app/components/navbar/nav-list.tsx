@@ -1,0 +1,26 @@
+"use client";
+import { NAV_ROUTES } from "@/app/common/constants";
+import { cn } from "@/app/lib/utils";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+export const NavList = () => {
+  const pathname = usePathname();
+  return NAV_ROUTES.map((routeUnit) => {
+    const isActive = pathname === routeUnit.href;
+
+    console.log("isActive", isActive);
+    return (
+      <Link
+        href={routeUnit.href}
+        key={routeUnit.id}
+        className={cn(
+          `cursor-pointer hover:text-neutral-300 transition-colors text-xs lg:text-sm`,
+          isActive ? "text-neutral-200" : "text-neutral-500 ",
+        )}
+      >
+        {routeUnit.name}
+      </Link>
+    );
+  });
+};
