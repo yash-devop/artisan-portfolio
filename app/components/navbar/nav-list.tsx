@@ -9,7 +9,6 @@ export const NavList = () => {
   return NAV_ROUTES.map((routeUnit) => {
     const isActive = pathname === routeUnit.href;
 
-    console.log("isActive", isActive);
     return (
       <Link
         href={routeUnit.href}
