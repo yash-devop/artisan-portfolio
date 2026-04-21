@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import { Wrapper } from "./components/Wrapper";
+import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -11,6 +11,12 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const InstrumentSerif = Instrument_Serif({
+  variable: "--font-instrument-serif",
+  subsets: ["latin"],
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -26,9 +32,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${InstrumentSerif.variable} h-full antialiased`}
     >
-      <body className="min-h-full h-full flex flex-col border border-border rounded-md relative px-2 lg:px-0">
+      <body className="font-sans min-h-full h-full flex flex-col relative">
         <Wrapper>{children}</Wrapper>
       </body>
     </html>
