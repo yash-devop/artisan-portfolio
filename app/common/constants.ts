@@ -4,14 +4,10 @@ export const NAV_ROUTES = [
     name: "Home",
     href: "/",
   },
-  {
-    id: 2,
-    name: "About",
-    href: "/about",
-  },
+
   {
     id: 3,
-    name: "Components",
+    name: "Crafts",
     href: "/docs/button",
   },
   {
