@@ -14,8 +14,10 @@ export const NavList = () => {
         href={routeUnit.href}
         key={routeUnit.id}
         className={cn(
-          `cursor-pointer hover:text-neutral-300 transition-colors text-xs lg:text-sm`,
-          isActive ? "text-neutral-200" : "text-neutral-500 ",
+          `cursor-pointer hover:text-neutral-600 hover:underline hover:underline-offset-8 transition-all text-sm`,
+          isActive
+            ? "text-neutral-500 font-medium underline underline-offset-8"
+            : "text-neutral-500",
         )}
       >
         {routeUnit.name}
