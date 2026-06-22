@@ -4,15 +4,16 @@ import { Designation } from "./designation";
 
 export const Wrapper = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="p-1 relative w-full h-full">
-      <div className="border border-neutral-400 rounded-lg w-full h-full shadow-2xl">
-        <div className="max-w-[750px] mx-auto w-full h-full ">
-          <div className="space-y-4 pt-20">
-            <Designation />
+    <div className="p-1 relative w-full min-h-screen overflow-auto">
+      <div className="md:border border-neutral-400 rounded-lg w-full h-full shadow-2xl overflow-auto">
+        <main className="max-w-2xl mx-auto h-screen">
+          <div className="pt-8 w-full px-4">
             <Navbar />
+            <Designation />
+
+            <section className="">{children}</section>
           </div>
-          {children}
-        </div>
+        </main>
       </div>
     </div>
   );

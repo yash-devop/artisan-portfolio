@@ -6,22 +6,26 @@ import { usePathname } from "next/navigation";
 
 export const NavList = () => {
   const pathname = usePathname();
-  return NAV_ROUTES.map((routeUnit) => {
-    const isActive = pathname === routeUnit.href;
+  return (
+    <div className="space-x-3">
+      {NAV_ROUTES.map((routeUnit) => {
+        const isActive = pathname === routeUnit.href;
 
-    return (
-      <Link
-        href={routeUnit.href}
-        key={routeUnit.id}
-        className={cn(
-          `cursor-pointer hover:text-neutral-600 hover:underline hover:underline-offset-8 transition-all text-sm`,
-          isActive
-            ? "text-neutral-500 font-medium underline underline-offset-8"
-            : "text-neutral-500",
-        )}
-      >
-        {routeUnit.name}
-      </Link>
-    );
-  });
+        return (
+          <Link
+            href={routeUnit.href}
+            key={routeUnit.id}
+            className={cn(
+              `cursor-pointer hover:text-neutral-600 transition-all text-xs font font-mono uppercase font-medium`,
+              isActive
+                ? "text-neutral-700 font-semibold hover:brightness-110"
+                : "text-neutral-400",
+            )}
+          >
+            /{routeUnit.name}
+          </Link>
+        );
+      })}
+    </div>
+  );
 };
