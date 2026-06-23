@@ -49,7 +49,8 @@ export const CopyEmail = ({
             opacity: 1,
             filter: "blur(0px)",
           }}
-          className="space-x-1.5 text-sm text-neutral-500"
+          className="space-x-1.5 text-sm text-neutral-500 cursor-pointer w-fit"
+          onClick={() => copyClipboard(email)}
         >
           <span>Press</span>
 
