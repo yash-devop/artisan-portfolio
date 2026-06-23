@@ -15,7 +15,7 @@ export default function Home() {
           <a
             href="https://twitter.com/yash_devop"
             target="_blank"
-            className="relative text-neutral-700  font-medium px-1 space-x-0.5"
+            className="relative text-neutral-600  font-medium px-1 space-x-0.5"
           >
             <IconBrandX size={16} className="shrink-0 inline-block mb-1" />
             Twitter
@@ -28,7 +28,7 @@ export default function Home() {
           Have a project in mind or want to connect? Reach me through{" "}
           <a
             href="mailto:your@email.com"
-            className="text-neutral-700  font-medium pr-0.5 space-x-0.5 relative"
+            className="text-neutral-600  font-medium pr-0.5 space-x-0.5 relative"
           >
             <IconMail size={18} className="shrink-0 inline-block mb-0.5" />
             Email
@@ -37,7 +37,7 @@ export default function Home() {
           or{" "}
           <a
             href="https://www.linkedin.com/in/yash-dev/"
-            className="text-neutral-700 font-medium pr-0.5 space-x-0.5 relative"
+            className="text-neutral-600 font-medium pr-0.5 space-x-0.5 relative"
           >
             <IconBrandLinkedin
               size={18}
