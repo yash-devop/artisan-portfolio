@@ -31,6 +31,8 @@ export const ExperienceSection = ({ slice }: { slice?: number }) => {
               {experience.stack ? (
                 <div className="[&_svg]:size-5 flex items-center gap-4 pt-4">
                   {experience.stack.map((StackIcon, idx) => {
+                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                    //@ts-ignore
                     return <StackIcon key={idx} />;
                   })}
                 </div>
