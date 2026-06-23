@@ -6,13 +6,11 @@ export const Wrapper = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="p-1 relative w-full min-h-dvh overflow-auto">
       <div className="md:border border-neutral-400 rounded-lg w-full h-full shadow-2xl overflow-auto">
-        <main className="max-w-2xl mx-auto h-screen">
-          <div className="pt-8 w-full px-4">
-            <Navbar />
-            <Designation />
+        <main className="max-w-2xl mx-auto h-screen pt-8 w-full px-4">
+          <Navbar />
+          <Designation />
 
-            <section className="">{children}</section>
-          </div>
+          <section className="">{children}</section>
         </main>
       </div>
     </div>
