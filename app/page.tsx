@@ -60,7 +60,7 @@ export default function Home() {
 
         <SectionWrapper name="experience">
           <ExperienceSection slice={2} />
-          <button className="mt-6 border w-fit mx-auto px-3 py-1 rounded-xl">
+          <button className="mt-6 border w-fit mx-auto px-3 py-1">
             View more
           </button>
         </SectionWrapper>

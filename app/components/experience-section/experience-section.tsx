@@ -10,7 +10,7 @@ export const ExperienceSection = ({ slice }: { slice?: number }) => {
             className="grid grid-cols-1 md:grid-cols-12"
           >
             <div className="col-span-4 font-mono text-neutral-500">
-              <div className="flex flex-row md:flex-col justify-between sm:justify-between gap-1.5 pt-1.5 sticky top-3">
+              <div className="flex flex-row md:flex-col justify-between sm:justify-between items-center md:items-start gap-1.5 pt-1.5 sticky top-3">
                 <span className="text-xs">{experience.year}</span>
                 <div className="text-xs font-semibold text-neutral-500">
                   {experience.location}
@@ -19,12 +19,12 @@ export const ExperienceSection = ({ slice }: { slice?: number }) => {
             </div>
 
             <div className="col-span-8">
-              <div className="flex justify-between">
+              <div className="flex justify-between items-center">
                 <span className="text-sm font-medium text-black">
                   {experience.company}
                 </span>
 
-                <span className="text-xs text-neutral-600 uppercase font-mono">
+                <span className="text-xs text-neutral-600 uppercase font-mono pt-0.5">
                   {experience.role}
                 </span>
               </div>
