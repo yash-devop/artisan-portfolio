@@ -34,9 +34,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${InstrumentSerif.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${InstrumentSerif.variable} h-full antialiased  scroll-smooth`}
     >
-      <body className="font-sans flex flex-col relative h-screen">
+      <body className="font-sans flex flex-col relative h-dvh">
         <Wrapper>{children}</Wrapper>
       </body>
     </html>
