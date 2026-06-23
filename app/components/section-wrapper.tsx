@@ -18,7 +18,7 @@ export const SectionWrapper = ({
           {name}
         </span>
       </div>
-      <div className={cn(`flex flex-col pt-5 pb-12`, className)}>
+      <div className={cn(`flex flex-col pt-5 pb-20`, className)}>
         {children}
       </div>
     </section>

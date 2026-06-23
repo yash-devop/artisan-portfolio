@@ -2,7 +2,7 @@ import { ExperienceSection } from "@/app/components/experience-section/experienc
 
 export default function ExperiencePage() {
   return (
-    <div>
+    <div className="py-10">
       <ExperienceSection />
     </div>
   );

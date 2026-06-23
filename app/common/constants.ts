@@ -9,6 +9,7 @@ import { ReactQueryIcon } from "../components/logos/react-query";
 import { TailwindIcon } from "../components/logos/tailwind";
 import { TurborepoIcon } from "../components/logos/turbo-repo";
 import { VercelIcon } from "../components/logos/vercel";
+import { TExperiences, TWork } from "./types";
 
 export const NAV_ROUTES = [
   {
@@ -18,18 +19,23 @@ export const NAV_ROUTES = [
   },
 
   {
-    id: 3,
+    id: 2,
     name: "Crafts",
-    href: "/docs/button",
+    href: "/crafts",
+  },
+  {
+    id: 3,
+    name: "Work",
+    href: "/work",
   },
   {
     id: 4,
-    name: "Blogs",
-    href: "/docs/blogs",
+    name: "Experience",
+    href: "/experience",
   },
 ];
 
-export const experiences = [
+export const EXPERIENCES: TExperiences[] = [
   {
     year: "2025 — NOW",
     role: "Frontend Engineer",
@@ -155,6 +161,48 @@ export const experiences = [
       "Experimenting with products around developer productivity, monitoring, and collaboration.",
       "Working across frontend, backend, infrastructure, databases, and cloud deployments.",
       "Learning through shipping real products, improving UX, and solving practical problems.",
+    ],
+  },
+];
+
+export const WORK: TWork[] = [
+  {
+    id: 1,
+    name: "Website Uptime Monitoring",
+    thumbnailDescription: "A Monitoring tool",
+    description: "A monitoring tool for your websites & enterprises.",
+    thumbnail:
+      "https://images.unsplash.com/photo-1781461565715-887bd369f481?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8",
+    images: [
+      "https://images.unsplash.com/photo-1781461565715-887bd369f481?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8",
+      "https://images.unsplash.com/photo-1781461565715-887bd369f481?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8",
+      "https://images.unsplash.com/photo-1781461565715-887bd369f481?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8",
+    ],
+  },
+  {
+    id: 2,
+    name: "Website Uptime Monitoring",
+    thumbnailDescription: "A Monitoring tool",
+    description: "A monitoring tool for your websites & enterprises.",
+    thumbnail:
+      "https://images.unsplash.com/photo-1781461565715-887bd369f481?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8",
+    images: [
+      "https://images.unsplash.com/photo-1781461565715-887bd369f481?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8",
+      "https://images.unsplash.com/photo-1781461565715-887bd369f481?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8",
+      "https://images.unsplash.com/photo-1781461565715-887bd369f481?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8",
+    ],
+  },
+  {
+    id: 3,
+    name: "Website Uptime Monitoring",
+    thumbnailDescription: "A Monitoring tool",
+    description: "A monitoring tool for your websites & enterprises.",
+    thumbnail:
+      "https://images.unsplash.com/photo-1781461565715-887bd369f481?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8",
+    images: [
+      "https://images.unsplash.com/photo-1781461565715-887bd369f481?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8",
+      "https://images.unsplash.com/photo-1781461565715-887bd369f481?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8",
+      "https://images.unsplash.com/photo-1781461565715-887bd369f481?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8",
     ],
   },
 ];

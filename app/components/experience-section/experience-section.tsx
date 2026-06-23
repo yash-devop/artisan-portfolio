@@ -1,10 +1,10 @@
-import { experiences } from "@/app/common/constants";
+import { EXPERIENCES } from "@/app/common/constants";
 
 export const ExperienceSection = ({ slice }: { slice?: number }) => {
   return (
     <div className="flex flex-col gap-16">
-      {experiences &&
-        experiences.slice(0, slice).map((experience) => (
+      {EXPERIENCES &&
+        EXPERIENCES.slice(0, slice).map((experience) => (
           <div
             key={`${experience.company}-${experience.year}`}
             className="grid grid-cols-1 md:grid-cols-12"

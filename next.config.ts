@@ -3,7 +3,10 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   images: {
-    remotePatterns: [{ hostname: "pbs.twimg.com" }],
+    remotePatterns: [
+      { hostname: "pbs.twimg.com" },
+      { hostname: "images.unsplash.com" },
+    ],
   },
 };
 

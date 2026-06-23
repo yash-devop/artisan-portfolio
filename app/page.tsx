@@ -4,6 +4,7 @@ import { DottedUnderline } from "./components/dotted-underline";
 import { SectionWrapper } from "./components/section-wrapper";
 import { TechStackSection } from "./components/tech-stack-section/tech-stack";
 import { ExperienceSection } from "./components/experience-section/experience-section";
+import { WorkSection } from "./components/work-section/work-section";
 
 export default function Home() {
   return (
@@ -57,7 +58,9 @@ export default function Home() {
         <SectionWrapper name="stack" className="[&_svg]:size-9">
           <TechStackSection />
         </SectionWrapper>
-
+        <SectionWrapper name="work">
+          <WorkSection />
+        </SectionWrapper>
         <SectionWrapper name="experience">
           <ExperienceSection slice={2} />
           <button className="mt-6 border w-fit mx-auto px-3 py-1">

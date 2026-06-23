@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import { Wrapper } from "./components/Wrapper";
 import "./globals.css";
+import { LayoutGroup } from "motion/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,7 +36,9 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${InstrumentSerif.variable} h-full antialiased  scroll-smooth`}
     >
       <body className="font-sans flex flex-col relative h-dvh">
-        <Wrapper>{children}</Wrapper>
+        <LayoutGroup>
+          <Wrapper>{children}</Wrapper>
+        </LayoutGroup>
       </body>
     </html>
   );
