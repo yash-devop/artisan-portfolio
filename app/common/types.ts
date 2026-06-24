@@ -13,4 +13,11 @@ export type TWork = {
   description?: string;
   thumbnail: string;
   images: string[];
+  links?: {
+    github?: string;
+    live_link?: string;
+    other?: string;
+    twitter?: string;
+    linkedin?: string;
+  };
 };

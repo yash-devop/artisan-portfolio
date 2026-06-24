@@ -169,40 +169,62 @@ export const WORK: TWork[] = [
   {
     id: 1,
     name: "Website Uptime Monitoring",
-    thumbnailDescription: "A Monitoring tool",
-    description: "A monitoring tool for your websites & enterprises.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1781461565715-887bd369f481?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8",
+    thumbnailDescription: "Monitor website reliability",
+    description:
+      "A real-time uptime monitoring platform that tracks website availability, detects downtime, and alerts teams before issues impact users.",
+    thumbnail: "/work-images/uptime/uptime-1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1781461565715-887bd369f481?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8",
-      "https://images.unsplash.com/photo-1781461565715-887bd369f481?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8",
-      "https://images.unsplash.com/photo-1781461565715-887bd369f481?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8",
+      "/work-images/uptime/uptime-1.jpg",
+      "/work-images/uptime/uptime-2.jpg",
+      "/work-images/uptime/uptime-3.jpg",
+      "/work-images/uptime/uptime-4.jpg",
     ],
+    links: {
+      github: "https://github.com/yash-devop/website-uptime-monitor",
+      twitter: "https://x.com/yash_devop/status/1889159855497265623?s=20",
+    },
   },
   {
     id: 2,
-    name: "Website Uptime Monitoring",
-    thumbnailDescription: "A Monitoring tool",
-    description: "A monitoring tool for your websites & enterprises.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1781461565715-887bd369f481?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8",
+    name: "Feedbackr",
+    thumbnailDescription: "Collect users feedback directly",
+    description:
+      "A lightweight feedback collection SDK that can be embedded into any website, helping teams gather user insights and improve products faster.",
+    thumbnail: "/work-images/feedbackr/feedbackr-1.jpg",
+
     images: [
-      "https://images.unsplash.com/photo-1781461565715-887bd369f481?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8",
-      "https://images.unsplash.com/photo-1781461565715-887bd369f481?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8",
-      "https://images.unsplash.com/photo-1781461565715-887bd369f481?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8",
+      "/work-images/feedbackr/feedbackr-1.jpg",
+      "/work-images/feedbackr/feedbackr-2.jpg",
+      "/work-images/feedbackr/feedbackr-3.jpg",
+      "/work-images/feedbackr/feedbackr-4.jpg",
+      "/work-images/feedbackr/feedbackr-5.jpg",
+      "/work-images/feedbackr/feedbackr-6.jpg",
+      "/work-images/feedbackr/feedbackr-7.jpg",
+      "/work-images/feedbackr/feedbackr-8.jpg",
+      "/work-images/feedbackr/feedbackr-9.jpg",
+      "/work-images/feedbackr/feedbackr-10.jpg",
     ],
+    links: {
+      github: "https://github.com/yash-devop/feedbackr",
+      live_link: "https://feedbackr-web.vercel.app/",
+    },
   },
   {
     id: 3,
-    name: "Website Uptime Monitoring",
-    thumbnailDescription: "A Monitoring tool",
-    description: "A monitoring tool for your websites & enterprises.",
-    thumbnail:
-      "https://images.unsplash.com/photo-1781461565715-887bd369f481?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8",
+    name: "TinyLogs",
+    thumbnailDescription: "Filter noise. Find important logs.",
+    description:
+      "A developer-focused logging platform that helps teams cut through noisy logs, identify important events, and understand system behavior faster.",
+    thumbnail: "/work-images/tinylogs/tinylog-1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1781461565715-887bd369f481?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8",
-      "https://images.unsplash.com/photo-1781461565715-887bd369f481?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8",
-      "https://images.unsplash.com/photo-1781461565715-887bd369f481?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8",
+      "/work-images/tinylogs/tinylog-1.jpg",
+      "/work-images/tinylogs/tinylog-2.jpg",
+      "/work-images/tinylogs/tinylog-3.jpg",
     ],
+    links: {
+      github: "https://github.com/yash-devop/tinylogs",
+      other: "https://www.npmjs.com/package/@yash-devop/tinylog",
+      twitter: "https://x.com/yash_devop/status/2041581870232826097",
+    },
   },
 ];

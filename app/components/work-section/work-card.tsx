@@ -1,9 +1,8 @@
 "use client";
-import { cn } from "@/app/lib/utils";
-import Image from "next/image";
-import { motion, Variants } from "motion/react";
-import Link from "next/link";
 import { TWork } from "@/app/common/types";
+import { motion, Variants } from "motion/react";
+import Image from "next/image";
+import Link from "next/link";
 
 const workCardVariants: Variants = {
   initial: ({ idx, imagesLength }: { idx: number; imagesLength: number }) => {
@@ -62,7 +61,7 @@ export const WorkCard = ({
                   width={20}
                   height={10}
                   unoptimized
-                  className="w-40 md:w-20 shadow-lg rounded-md p-px border border-neutral-300 bg-white"
+                  className="w-40 md:w-20 h-10 shadow-lg rounded-md p-px border border-neutral-300 bg-white"
                 />
               </motion.div>
             </motion.div>

@@ -5,6 +5,7 @@ import { SectionWrapper } from "./components/section-wrapper";
 import { TechStackSection } from "./components/tech-stack-section/tech-stack";
 import { ExperienceSection } from "./components/experience-section/experience-section";
 import { WorkSection } from "./components/work-section/work-section";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -63,9 +64,14 @@ export default function Home() {
         </SectionWrapper>
         <SectionWrapper name="experience">
           <ExperienceSection slice={2} />
-          <button className="mt-6 border w-fit mx-auto px-3 py-1">
-            View more
-          </button>
+          <Link
+            href={"/work"}
+            className="cursor-pointer w-fit mx-auto mt-12 rounded-md border border-neutral-400 "
+          >
+            <button className="px-3 py-1.5 cursor-pointer text-sm">
+              View more
+            </button>
+          </Link>
         </SectionWrapper>
       </div>
     </div>
