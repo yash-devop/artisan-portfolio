@@ -61,7 +61,7 @@ export const WorkCard = ({
                   width={20}
                   height={10}
                   unoptimized
-                  className="w-40 md:w-20 h-10 shadow-lg rounded-md p-px border border-neutral-300 bg-white"
+                  className="w-32 h-14 md:w-20 md:h-10 shadow-lg rounded-md p-px border border-neutral-300 bg-white"
                 />
               </motion.div>
             </motion.div>
