@@ -65,7 +65,7 @@ export default function Home() {
         <SectionWrapper name="experience">
           <ExperienceSection slice={2} />
           <Link
-            href={"/work"}
+            href={"/experience"}
             className="cursor-pointer w-fit mx-auto mt-12 rounded-md border border-neutral-400 "
           >
             <button className="px-3 py-1.5 cursor-pointer text-sm">
