@@ -5,6 +5,8 @@ import { useCopyToClipboard } from "../hooks/useCopyToClipboard";
 import { motion } from "motion/react";
 import { IconCheck } from "@tabler/icons-react";
 
+import { useMediaQuery } from "react-responsive";
+
 export const CopyEmail = ({
   email = "yashkamble.dev@gmail.com",
 }: {
@@ -18,6 +20,8 @@ export const CopyEmail = ({
       }
     });
   }, [copyClipboard, email]);
+
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   return (
     <AnimatePresence>
@@ -52,7 +56,7 @@ export const CopyEmail = ({
           className="space-x-1.5 text-sm text-neutral-500 cursor-pointer w-fit"
           onClick={() => copyClipboard(email)}
         >
-          <span>Press</span>
+          <span>{isMobile ? "Click" : "Press"}</span>
 
           <code className="inline-block bg-neutral-200 px-1.5 py-0.5 text-neutral-700 font-medium ring ring-neutral-400 rounded-sm text-xs">
             E
