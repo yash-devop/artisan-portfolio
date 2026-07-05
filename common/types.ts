@@ -1,9 +1,12 @@
+import { SVGProps } from "react";
+import { ICONS } from "./constants";
+
 export type TExperiences = {
   year: string;
   role: string;
   company: string;
   location?: string;
-  stack?: unknown[];
+  stack?: TStack[];
   description: string[];
 };
 export type TWork = {
@@ -20,4 +23,11 @@ export type TWork = {
     twitter?: string;
     linkedin?: string;
   };
+};
+
+export type IconKey = keyof typeof ICONS;
+
+export type TStack = {
+  name: string;
+  icon: IconKey;
 };

@@ -1,3 +1,4 @@
+import { MotionDevIcon } from "@/components/logos/motion-dev";
 import { AmazonAwsIcon } from "../components/logos/aws";
 import { FigmaIcon } from "../components/logos/figma";
 import { MongodbWordmarkIcon } from "../components/logos/mongo";
@@ -10,6 +11,10 @@ import { TailwindIcon } from "../components/logos/tailwind";
 import { TurborepoIcon } from "../components/logos/turbo-repo";
 import { VercelIcon } from "../components/logos/vercel";
 import { TExperiences, TWork } from "./types";
+import { DockerIcon } from "@/components/logos/docker";
+import { ChatgptIcon } from "@/components/logos/chatgpt";
+import { ClaudeIcon } from "@/components/logos/claude";
+import { GithubIcon } from "@/components/logos/github";
 
 export const NAV_ROUTES = [
   {
@@ -42,12 +47,12 @@ export const EXPERIENCES: TExperiences[] = [
     company: "Fyntune Solutions",
     location: "Turbhe , Navi Mumbai",
     stack: [
-      ReactIcon,
-      TailwindIcon,
-      TurborepoIcon,
-      ReactQueryIcon,
-      RazorpayIcon,
-      VercelIcon,
+      { name: "React", icon: "react" },
+      { name: "Tailwind CSS", icon: "tailwind" },
+      { name: "Turborepo", icon: "turborepo" },
+      { name: "React Query", icon: "reactQuery" },
+      { name: "Razorpay", icon: "razorpay" },
+      { name: "Vercel", icon: "vercel" },
     ],
 
     description: [
@@ -63,7 +68,12 @@ export const EXPERIENCES: TExperiences[] = [
     role: "Fullstack Developer",
     company: "TrufflePig.ai",
     location: "San-fransisco , Remote",
-    stack: [NextjsIcon, TailwindIcon, VercelIcon, AmazonAwsIcon],
+    stack: [
+      { name: "Next.js", icon: "nextjs" },
+      { name: "Tailwind CSS", icon: "tailwind" },
+      { name: "Vercel", icon: "vercel" },
+      { name: "AWS", icon: "aws" },
+    ],
     description: [
       "Built an AI-powered PDF experience that helps users understand and interact with documents.",
       "Developed smooth AI workflows with responsive interfaces and real-time interactions.",
@@ -77,7 +87,11 @@ export const EXPERIENCES: TExperiences[] = [
     role: "Frontend / UI UX Developer",
     location: "Mumbai, Remote",
     company: "iVOOMi",
-    stack: [ReactIcon, TailwindIcon, FigmaIcon],
+    stack: [
+      { name: "React", icon: "react" },
+      { name: "Tailwind CSS", icon: "tailwind" },
+      { name: "Figma", icon: "figma" },
+    ],
 
     description: [
       "Built a customer-facing digital experience for an electric vehicle brand.",
@@ -92,11 +106,11 @@ export const EXPERIENCES: TExperiences[] = [
     company: "IIT Bombay",
     location: "Powai, Hybrid",
     stack: [
-      ReactIcon,
-      NodejsIcon,
-      MongodbWordmarkIcon,
-      RazorpayIcon,
-      VercelIcon,
+      { name: "React", icon: "react" },
+      { name: "Node.js", icon: "nodejs" },
+      { name: "MongoDB", icon: "mongodb" },
+      { name: "Razorpay", icon: "razorpay" },
+      { name: "Vercel", icon: "vercel" },
     ],
     description: [
       "Built and shipped full-stack applications while working across frontend, backend, and databases.",
@@ -164,6 +178,26 @@ export const EXPERIENCES: TExperiences[] = [
     ],
   },
 ];
+
+export const ICONS = {
+  react: ReactIcon,
+  tailwind: TailwindIcon,
+  turborepo: TurborepoIcon,
+  reactQuery: ReactQueryIcon,
+  razorpay: RazorpayIcon,
+  vercel: VercelIcon,
+  nextjs: NextjsIcon,
+  aws: AmazonAwsIcon,
+  figma: FigmaIcon,
+  nodejs: NodejsIcon,
+  mongodb: MongodbWordmarkIcon,
+  motion: MotionDevIcon,
+  docker: DockerIcon,
+  chatgpt: ChatgptIcon,
+  claude: ClaudeIcon,
+  github: GithubIcon,
+  node: NodejsIcon,
+} as const;
 
 export const WORK: TWork[] = [
   {

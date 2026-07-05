@@ -1,4 +1,5 @@
-import { EXPERIENCES } from "@/common/constants";
+import { EXPERIENCES, ICONS } from "@/common/constants";
+import { ExperienceStack } from "./experience-stack";
 
 export const ExperienceSection = ({ slice }: { slice?: number }) => {
   return (
@@ -30,10 +31,10 @@ export const ExperienceSection = ({ slice }: { slice?: number }) => {
               </div>
               {experience.stack ? (
                 <div className="[&_svg]:size-5 flex items-center gap-4 pt-4">
-                  {experience.stack.map((StackIcon, idx) => {
-                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                    //@ts-ignore
-                    return <StackIcon key={idx} />;
+                  {experience.stack.map(({ icon, name }, idx) => {
+                    return (
+                      <ExperienceStack key={name} name={name} icon={icon} />
+                    );
                   })}
                 </div>
               ) : null}
