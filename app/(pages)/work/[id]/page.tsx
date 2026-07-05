@@ -1,5 +1,5 @@
 "use client";
-import { WORK } from "@/app/common/constants";
+import { WORK } from "@/common/constants";
 import { useParams } from "next/navigation";
 import { motion } from "motion/react";
 import Image from "next/image";

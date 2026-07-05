@@ -1,5 +1,5 @@
 "use client";
-import { TWork } from "@/app/common/types";
+import { TWork } from "@/common/types";
 import { motion, Variants } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";

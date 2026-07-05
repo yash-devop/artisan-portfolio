@@ -1,6 +1,6 @@
 "use client";
-import { NAV_ROUTES } from "@/app/common/constants";
-import { cn } from "@/app/lib/utils";
+import { NAV_ROUTES } from "@/common/constants";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 

@@ -1,10 +1,10 @@
 import { IconBrandLinkedin, IconBrandX, IconMail } from "@tabler/icons-react";
-import { CopyEmail } from "./components/copy-email";
-import { DottedUnderline } from "./components/dotted-underline";
-import { SectionWrapper } from "./components/section-wrapper";
-import { TechStackSection } from "./components/tech-stack-section/tech-stack";
-import { ExperienceSection } from "./components/experience-section/experience-section";
-import { WorkSection } from "./components/work-section/work-section";
+import { CopyEmail } from "../components/copy-email";
+import { DottedUnderline } from "../components/dotted-underline";
+import { SectionWrapper } from "../components/section-wrapper";
+import { TechStackSection } from "../components/tech-stack-section/tech-stack";
+import { ExperienceSection } from "../components/experience-section/experience-section";
+import { WorkSection } from "../components/work-section/work-section";
 import Link from "next/link";
 
 export default function Home() {

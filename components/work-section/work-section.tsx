@@ -1,4 +1,4 @@
-import { WORK } from "@/app/common/constants";
+import { WORK } from "@/common/constants";
 import { WorkCard } from "./work-card";
 import Link from "next/link";
 

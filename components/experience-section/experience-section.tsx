@@ -1,4 +1,4 @@
-import { EXPERIENCES } from "@/app/common/constants";
+import { EXPERIENCES } from "@/common/constants";
 
 export const ExperienceSection = ({ slice }: { slice?: number }) => {
   return (

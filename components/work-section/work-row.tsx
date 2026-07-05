@@ -1,5 +1,5 @@
 "use client";
-import { TWork } from "@/app/common/types";
+import { TWork } from "@/common/types";
 import { IconArrowUp } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
