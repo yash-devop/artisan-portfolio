@@ -1,6 +1,6 @@
 "use client";
 import { WORK } from "@/common/constants";
-import { WorkRow } from "@/components/work-section/work-row";
+import { WorkRow } from "@/features/work/work-row";
 import { motion } from "motion/react";
 
 const container = {

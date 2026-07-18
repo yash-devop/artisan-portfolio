@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Instrument_Serif, Inter } from "next/font/google";
-import { Wrapper } from "../components/Wrapper";
+import { PageWrapper } from "../components/wrappers/page-wrapper";
 import "./globals.css";
 import { LayoutGroup } from "motion/react";
 import { cn } from "@/lib/utils";
@@ -51,7 +51,7 @@ export default function RootLayout({
       <body className="font-sans flex flex-col relative h-dvh">
         <TooltipProvider>
           <LayoutGroup>
-            <Wrapper>{children}</Wrapper>
+            <PageWrapper>{children}</PageWrapper>
           </LayoutGroup>
         </TooltipProvider>
       </body>
