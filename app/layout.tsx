@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Instrument_Serif, Inter } from "next/font/google";
-import { PageWrapper } from "../components/wrappers/page-wrapper";
+import { PageWrapper } from "../components/layouts/page-wrapper";
 import "./globals.css";
 import { LayoutGroup } from "motion/react";
 import { cn } from "@/lib/utils";

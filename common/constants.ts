@@ -1,20 +1,20 @@
-import { MotionDevIcon } from "@/components/logos/motion-dev";
-import { AmazonAwsIcon } from "../components/logos/aws";
-import { FigmaIcon } from "../components/logos/figma";
-import { MongodbWordmarkIcon } from "../components/logos/mongo";
-import { NextjsIcon } from "../components/logos/next";
-import { NodejsIcon } from "../components/logos/node";
-import { RazorpayIcon } from "../components/logos/razorpay";
-import { ReactIcon } from "../components/logos/react";
-import { ReactQueryIcon } from "../components/logos/react-query";
-import { TailwindIcon } from "../components/logos/tailwind";
-import { TurborepoIcon } from "../components/logos/turbo-repo";
-import { VercelIcon } from "../components/logos/vercel";
+import { MotionDevIcon } from "@/components/icons/motion-dev";
+import { AmazonAwsIcon } from "../components/icons/aws";
+import { FigmaIcon } from "../components/icons/figma";
+import { MongodbWordmarkIcon } from "../components/icons/mongo";
+import { NextjsIcon } from "../components/icons/next";
+import { NodejsIcon } from "../components/icons/node";
+import { RazorpayIcon } from "../components/icons/razorpay";
+import { ReactIcon } from "../components/icons/react";
+import { ReactQueryIcon } from "../components/icons/react-query";
+import { TailwindIcon } from "../components/icons/tailwind";
+import { TurborepoIcon } from "../components/icons/turbo-repo";
+import { VercelIcon } from "../components/icons/vercel";
 import { TExperiences, TWork } from "./types";
-import { DockerIcon } from "@/components/logos/docker";
-import { ChatgptIcon } from "@/components/logos/chatgpt";
-import { ClaudeIcon } from "@/components/logos/claude";
-import { GithubIcon } from "@/components/logos/github";
+import { DockerIcon } from "@/components/icons/docker";
+import { ChatgptIcon } from "@/components/icons/chatgpt";
+import { ClaudeIcon } from "@/components/icons/claude";
+import { GithubIcon } from "@/components/icons/github";
 
 export const NAV_ROUTES = [
   {

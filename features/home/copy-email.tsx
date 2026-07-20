@@ -1,7 +1,7 @@
 "use client";
 import { AnimatePresence } from "motion/react";
 import { useEffect } from "react";
-import { useCopyToClipboard } from "../hooks/useCopyToClipboard";
+import { useCopyToClipboard } from "../../hooks/useCopyToClipboard";
 import { motion } from "motion/react";
 import { IconCheck } from "@tabler/icons-react";
 

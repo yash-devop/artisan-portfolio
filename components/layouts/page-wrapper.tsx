@@ -1,7 +1,7 @@
 import { AnimatePresence } from "motion/react";
 import React from "react";
 import { Designation } from "../../features/home/designation";
-import { Navbar } from "../navbar/navbar";
+import { Navbar } from "../navbar";
 import { TransitionWrapper } from "./transition-wrapper";
 export const PageWrapper = ({ children }: { children: React.ReactNode }) => {
   return (
