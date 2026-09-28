@@ -9,8 +9,11 @@ export const NavList = () => {
   return (
     <div className="space-x-3">
       {NAV_ROUTES.map((routeUnit) => {
-        const isActive = pathname === routeUnit.href;
-
+        const isActive =
+          pathname === "/"
+            ? routeUnit.href === "/"
+            : pathname === routeUnit.href ||
+              pathname.startsWith(`${routeUnit.href}/`);
         return (
           <Link
             href={routeUnit.href}
