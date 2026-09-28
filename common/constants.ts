@@ -7,6 +7,7 @@ import { NodejsIcon } from "../components/icons/node";
 import { RazorpayIcon } from "../components/icons/razorpay";
 import { ReactIcon } from "../components/icons/react";
 import { ReactQueryIcon } from "../components/icons/react-query";
+import { ReduxIcon } from "../components/icons/redux";
 import { TailwindIcon } from "../components/icons/tailwind";
 import { TurborepoIcon } from "../components/icons/turbo-repo";
 import { VercelIcon } from "../components/icons/vercel";
@@ -53,6 +54,27 @@ export const EXPERIENCES: TExperiences[] = [
       { name: "React Query", icon: "reactQuery" },
       { name: "Razorpay", icon: "razorpay" },
       { name: "Vercel", icon: "vercel" },
+    ],
+
+    description: [
+      "Building financial products and onboarding experiences used across 10+ broker platforms.",
+      "Designed scalable UI systems and reusable components focused on better developer experience.",
+      "Improved application performance by migrating legacy React codebases to Vite, reducing build times by 50%.",
+      "Worked closely with product teams to turn ideas into polished, production-ready experiences.",
+    ],
+  },
+  {
+    year: "July 2026 — September 2026",
+    role: "Frontend Engineer",
+    company: "Transket.ai",
+    location: "Ontario , Canada",
+    stack: [
+      { name: "React", icon: "react" },
+      { name: "Tailwind CSS", icon: "tailwind" },
+      { name: "Turborepo", icon: "turborepo" },
+      { name: "React Redux", icon: "redux" },
+      { name: "Razorpay", icon: "razorpay" },
+      { name: "AWS", icon: "aws" },
     ],
 
     description: [
@@ -184,6 +206,7 @@ export const ICONS = {
   tailwind: TailwindIcon,
   turborepo: TurborepoIcon,
   reactQuery: ReactQueryIcon,
+  redux: ReduxIcon,
   razorpay: RazorpayIcon,
   vercel: VercelIcon,
   nextjs: NextjsIcon,
@@ -259,6 +282,25 @@ export const WORK: TWork[] = [
       github: "https://github.com/yash-devop/tinylogs",
       other: "https://www.npmjs.com/package/@yash-devop/tinylog",
       twitter: "https://x.com/yash_devop/status/2041581870232826097",
+    },
+  },
+  {
+    id: 4,
+    name: "Documently",
+    thumbnailDescription: "Documents, organised",
+    description:
+      "A document workspace for creating, organising, and sharing content in one clean, focused place.",
+    thumbnail: "/work-images/documently/1.jpg",
+    images: [
+      "/work-images/documently/1.jpg",
+      "/work-images/documently/2.jpg",
+      "/work-images/documently/4.jpg",
+      "/work-images/documently/5.jpg",
+      "/work-images/documently/auth.jpg",
+    ],
+    links: {
+      github: "https://github.com/yash-devop/documently",
+      live_link: "https://documently.emberbuild.in",
     },
   },
 ];
