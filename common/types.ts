@@ -16,6 +16,8 @@ export type TWork = {
   description?: string;
   thumbnail: string;
   images: string[];
+  createdAt: string;
+  updatedAt: string;
   links?: {
     github?: string;
     live_link?: string;

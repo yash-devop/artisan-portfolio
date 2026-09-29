@@ -1,5 +1,5 @@
 "use client";
-import { WORK } from "@/common/constants";
+import { WORK_NEWEST_FIRST } from "@/common/constants";
 import { WorkRow } from "@/features/work/work-row";
 import { motion } from "motion/react";
 
@@ -19,7 +19,7 @@ export default function WorkPage() {
       animate="show"
       className="pt-14 flex flex-col gap-y-6"
     >
-      {WORK.map((workUnit, idx) => {
+      {WORK_NEWEST_FIRST.map((workUnit, idx) => {
         return <WorkRow key={workUnit.id} {...workUnit} idx={idx} />;
       })}
     </motion.div>

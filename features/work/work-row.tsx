@@ -1,5 +1,6 @@
 "use client";
 import { TWork } from "@/common/types";
+import { formatYear } from "@/lib/work-date";
 import { IconArrowUp } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -24,6 +25,7 @@ export const WorkRow = ({
   name,
   thumbnail,
   description,
+  updatedAt,
 }: TWork & {
   idx: number;
 }) => {
@@ -46,7 +48,15 @@ export const WorkRow = ({
           <p className="text-neutral-500">{description}</p>
         </div>
       </motion.div>
-      <IconArrowUp className="rotate-45 stroke-1 text-neutral-500" size={18} />
+      <div className="flex items-center gap-3 shrink-0">
+        <span className="text-xs font-mono text-neutral-400">
+          {formatYear(updatedAt)}
+        </span>
+        <IconArrowUp
+          className="rotate-45 stroke-1 text-neutral-500"
+          size={18}
+        />
+      </div>
     </Link>
   );
 };

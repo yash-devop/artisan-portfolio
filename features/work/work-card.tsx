@@ -1,5 +1,6 @@
 "use client";
 import { TWork } from "@/common/types";
+import { formatYear } from "@/lib/work-date";
 import { motion, Variants } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -23,6 +24,7 @@ export const WorkCard = ({
   name,
   id,
   thumbnailDescription,
+  updatedAt,
 }: Omit<TWork, "images"> & {
   images: [string, string, string];
 }) => {
@@ -34,9 +36,14 @@ export const WorkCard = ({
         className="flex flex-col w-fit gap-8 md:gap-3 cursor-pointer"
       >
         <div className="flex flex-col text-sm">
-          <motion.span layout="position" layoutId={`work-title-${id}`}>
-            {name}
-          </motion.span>
+          <div className="flex items-baseline gap-2">
+            <motion.span layout="position" layoutId={`work-title-${id}`}>
+              {name}
+            </motion.span>
+            <span className="text-xs font-mono text-neutral-400">
+              {formatYear(updatedAt)}
+            </span>
+          </div>
 
           <p className="text-neutral-500">{thumbnailDescription}</p>
         </div>

@@ -230,6 +230,8 @@ export const WORK: TWork[] = [
     description:
       "A real-time uptime monitoring platform that tracks website availability, detects downtime, and alerts teams before issues impact users.",
     thumbnail: "/work-images/uptime/uptime-1.jpg",
+    createdAt: "2024-10-20",
+    updatedAt: "2025-01-18",
     images: [
       "/work-images/uptime/uptime-1.jpg",
       "/work-images/uptime/uptime-2.jpg",
@@ -248,6 +250,8 @@ export const WORK: TWork[] = [
     description:
       "A lightweight feedback collection SDK that can be embedded into any website, helping teams gather user insights and improve products faster.",
     thumbnail: "/work-images/feedbackr/feedbackr-1.jpg",
+    createdAt: "2026-01-25",
+    updatedAt: "2026-05-17",
 
     images: [
       "/work-images/feedbackr/feedbackr-1.jpg",
@@ -273,6 +277,8 @@ export const WORK: TWork[] = [
     description:
       "A developer-focused logging platform that helps teams cut through noisy logs, identify important events, and understand system behavior faster.",
     thumbnail: "/work-images/tinylogs/tinylog-1.jpg",
+    createdAt: "2026-04-03",
+    updatedAt: "2026-06-07",
     images: [
       "/work-images/tinylogs/tinylog-1.jpg",
       "/work-images/tinylogs/tinylog-2.jpg",
@@ -291,6 +297,8 @@ export const WORK: TWork[] = [
     description:
       "A document workspace for creating, organising, and sharing content in one clean, focused place.",
     thumbnail: "/work-images/documently/1.jpg",
+    createdAt: "2026-08-01",
+    updatedAt: "2026-09-28",
     images: [
       "/work-images/documently/1.jpg",
       "/work-images/documently/2.jpg",
@@ -304,3 +312,7 @@ export const WORK: TWork[] = [
     },
   },
 ];
+
+export const WORK_NEWEST_FIRST = [...WORK].sort(
+  (a, b) => Date.parse(b.updatedAt) - Date.parse(a.updatedAt)
+);

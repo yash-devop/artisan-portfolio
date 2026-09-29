@@ -1,11 +1,11 @@
-import { WORK } from "@/common/constants";
+import { WORK_NEWEST_FIRST } from "@/common/constants";
 import { WorkCard } from "./work-card";
 import Link from "next/link";
 
 export const WorkSection = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-x-3 gap-y-10">
-      {WORK.map((work) => {
+      {WORK_NEWEST_FIRST.map((work) => {
         return (
           <WorkCard
             key={work.id}

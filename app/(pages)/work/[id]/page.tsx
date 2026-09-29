@@ -1,5 +1,6 @@
 "use client";
 import { WORK } from "@/common/constants";
+import { formatMonthYear } from "@/lib/work-date";
 import { useParams } from "next/navigation";
 import { motion } from "motion/react";
 import Image from "next/image";
@@ -28,6 +29,11 @@ export default function SpecificWorkPage() {
         <span className="font-medium">{work.name}</span>
         <span className="text-neutral-500">{work.description}</span>
       </motion.div>
+      <div className="flex items-center gap-2 pb-1 text-xs font-mono text-neutral-400">
+        <span>Built {formatMonthYear(work.createdAt)}</span>
+        <span className="text-neutral-300">·</span>
+        <span>Updated {formatMonthYear(work.updatedAt)}</span>
+      </div>
       <div className="text-sm underline underline-offset-2 space-x-4 py-5 px-0.5">
         {work.links?.github && (
           <Link href={work.links?.github} className="" target="_blank">
