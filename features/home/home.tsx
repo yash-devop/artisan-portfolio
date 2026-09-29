@@ -29,7 +29,7 @@ export const Home = () => {
         <p>
           Have a project in mind or want to connect? Reach me through{" "}
           <a
-            href="mailto:your@email.com"
+            href="mailto:yashkamble.dev@email.com"
             className="text-neutral-600  font-medium pr-0.5 space-x-0.5 relative"
           >
             <IconMail size={18} className="shrink-0 inline-block mb-0.5" />
