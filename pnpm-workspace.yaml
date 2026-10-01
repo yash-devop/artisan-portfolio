@@ -1,3 +1,9 @@
+packages:
+  - "."
+
+overrides:
+  "@base-ui/utils": "0.4.0"
+
 allowBuilds:
   sharp: false
   unrs-resolver: false

@@ -5,6 +5,7 @@ import "./globals.css";
 import { LayoutGroup } from "motion/react";
 import { cn } from "@/lib/utils";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -84,7 +85,10 @@ export default function RootLayout({
       <body className="font-sans flex flex-col relative h-dvh">
         <TooltipProvider>
           <LayoutGroup>
-            <PageWrapper>{children}</PageWrapper>
+            <PageWrapper>
+              {children}
+              <Analytics />
+            </PageWrapper>
           </LayoutGroup>
         </TooltipProvider>
       </body>
