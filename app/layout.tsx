@@ -24,9 +24,42 @@ const InstrumentSerif = Instrument_Serif({
   weight: ["400"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Yash Kamble - Developer",
-  description: "Yash kamble portfolio",
+  description:
+    "Yash Kamble - full-stack developer portfolio showcasing projects, skills, and experience.",
+  authors: [
+    { name: "Yash Kamble", url: "https://www.linkedin.com/in/yash-dev/" },
+  ],
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "/",
+    siteName: "Yash Kamble",
+    title: "Yash Kamble - Developer",
+    description:
+      "Yash Kamble - full-stack developer portfolio showcasing projects, skills, and experience.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Yash Kamble - Developer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Yash Kamble - Developer",
+    description:
+      "Yash Kamble - full-stack developer portfolio showcasing projects, skills, and experience.",
+    images: ["/og-image.png"],
+    creator: "https://x.com/yash_devop",
+  },
 };
 
 export default function RootLayout({
