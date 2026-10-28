@@ -2,6 +2,7 @@
 import { usePathname } from "next/navigation";
 import { motion } from "motion/react";
 import React from "react";
+import { cn } from "@/lib/utils";
 export const TransitionWrapper = ({
   children,
 }: {
@@ -14,14 +15,20 @@ export const TransitionWrapper = ({
       key={pathname}
       initial={{
         opacity: 0,
+        filter: "blur(4px)",
       }}
       animate={{
         opacity: 1,
+        filter: "blur(0px)",
       }}
       exit={{
         opacity: 0,
+        filter: "blur(4px)",
       }}
-      className="p-1 relative w-full min-h-dvh overflow-auto"
+      className={cn(
+        `p-1 relative w-full min-h-dvh overflow-auto`,
+        pathname === "/crafts" && "bg-neutral-800",
+      )}
     >
       {children}
     </motion.div>

@@ -17,7 +17,7 @@ export default function WorkPage() {
       variants={container}
       initial="hidden"
       animate="show"
-      className="pt-14 flex flex-col gap-y-6"
+      className="pt-14 flex flex-col gap-y-6 max-w-2xl mx-auto "
     >
       {WORK_NEWEST_FIRST.map((workUnit, idx) => {
         return <WorkRow key={workUnit.id} {...workUnit} idx={idx} />;

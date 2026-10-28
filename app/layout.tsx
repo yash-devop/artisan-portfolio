@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Instrument_Serif, Inter } from "next/font/google";
-import { PageWrapper } from "../components/layouts/page-wrapper";
 import "./globals.css";
-import { LayoutGroup } from "motion/react";
+import { AnimatePresence, LayoutGroup } from "motion/react";
 import { cn } from "@/lib/utils";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Analytics } from "@vercel/analytics/next";
+import { TransitionWrapper } from "@/components/layouts/transition-wrapper";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -85,10 +85,14 @@ export default function RootLayout({
       <body className="font-sans flex flex-col relative h-dvh">
         <TooltipProvider>
           <LayoutGroup>
-            <PageWrapper>
-              {children}
-              <Analytics />
-            </PageWrapper>
+            <AnimatePresence mode="wait">
+              <TransitionWrapper>
+                <div className="md:[box-shadow:0_0_2px_0_var(--color-neutral-600)] rounded-xl w-full h-full shadow-2xl overflow-auto">
+                  {children}
+                </div>
+              </TransitionWrapper>
+            </AnimatePresence>
+            <Analytics />
           </LayoutGroup>
         </TooltipProvider>
       </body>
