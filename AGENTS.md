@@ -1,172 +1,119 @@
 # AGENTS.md
 
-Project guidance for coding agents working in this repository.
+Portfolio for Yash Kamble. Next.js App Router, React 19, TypeScript, Tailwind v4,
+Motion, shadcn-style UI on Base UI (`base-vega`), Tabler icons. Single-package
+pnpm workspace.
 
-## Project overview
+## Hard rules
 
-Personal portfolio for Yash Kamble. Next.js App Router, React 19, TypeScript,
-Tailwind CSS v4, Motion, shadcn-style UI (Base UI primitives), and Tabler icons.
+- **pnpm only.** Install root deps with `pnpm add <pkg> -w`. Never npm/yarn.
+- **Icons: `@tabler/icons-react` only.** Never import `lucide-react` — the
+  installed `1.23.0` is broken and fails `pnpm build`.
+- Cross-folder imports use `@/`. Relative imports only for siblings within a
+  feature.
+- Files/folders **kebab-case**. Components **PascalCase**. Hooks `useX`.
+  Types `TX`. Constants `UPPER_SNAKE`. Handlers `handleX`.
+- Add `"use client"` only for hooks, browser APIs, or Motion.
+- Style with Tailwind utilities + `cn()` from `@/lib/utils`. Use tokens from
+  `app/globals.css`; no CSS modules/styled-components.
+- Do not add page widths or nav to `app/layout.tsx` — it is global-only.
 
-## Commands
-
-Use **pnpm** (the repo is a single-package pnpm workspace; `packageManager` is
-`pnpm@11.13.1`). Do not use npm/yarn for installs.
+## Commands and definition of done
 
 ```bash
-pnpm dev              # local dev server
-pnpm lint             # eslint
-npx tsc --noEmit      # typecheck (no package script)
-pnpm build            # production build; also validates routes/types
-pnpm add <pkg> -w     # install a root dependency (pnpm workspace root)
+pnpm dev
+pnpm lint
+npx tsc --noEmit
+pnpm build
 ```
 
-Before considering a task done, run `pnpm lint`, `npx tsc --noEmit`, and
-`pnpm build` when the change touches routes, layouts, or shared components.
-If you move `app/` routes, delete stale generated types (`rm -rf .next/types`)
-or run a build so TypeScript stops referencing old paths.
+No test suite exists. Done = lint + typecheck (+ `pnpm build` when routes,
+layouts, or shared components changed). After moving `app/` routes, run
+`rm -rf .next/types` or a build so stale route types stop breaking `tsc`.
 
-## Folder structure
+## Structure
 
 ```text
 app/
-  layout.tsx                  # root shell: fonts, providers, transition frame
-  globals.css                 # Tailwind v4 + design tokens (light/dark)
-  not-found.tsx
-  (site)/                     # route group: pages WITH navbar + designation
-    layout.tsx                # chrome + max-w-2xl page container
-    page.tsx                  # "/" home
-    about/page.tsx
-    experience/page.tsx
-    work/page.tsx
-    work/[id]/page.tsx
-  crafts/                     # standalone area WITHOUT navbar/designation
-    layout.tsx                # shadcn sidebar shell
-    page.tsx                  # "/crafts"
-
-common/
-  constants.ts                # NAV_ROUTES, EXPERIENCES, WORK, ICONS registry
-  types.ts                    # shared types (T-prefixed)
-
+  layout.tsx              # fonts, providers, analytics, transition frame
+  globals.css             # Tailwind v4 + light/dark tokens
+  (site)/                 # pages WITH navbar + designation
+    layout.tsx            # chrome + max-w-2xl container
+    page.tsx              # "/"
+    about/ experience/ work/[id]/
+  crafts/                 # standalone; own sidebar shell, no site chrome
+    layout.tsx  page.tsx
+common/                   # constants.ts (data + registries), types.ts
 components/
-  ui/                         # shadcn/Base UI primitives (button, sidebar, ...)
-  navigation/                 # navbar, nav-list
-  layouts/                    # page/section/transition wrappers
-  icons/                      # brand SVG icons, one file per icon
+  ui/                     # shadcn/Base UI primitives
+  navigation/ layouts/ icons/
   dotted-underline.tsx
-
-features/                     # feature modules: components + local index.ts
-  home/                       # home, designation, copy-email, status-ping
-  work/                       # work-section, work-row, work-card
-  experience/                 # experience, experience-stack
-  tech-stack/                 # tech-stack, tooltip-stack
-  crafts/                     # crafts-sidebar
-
-hooks/                        # use-mobile, useCopyToClipboard
-lib/                          # utils (cn), date formatters
-public/                       # static assets, work images under work-images/
+features/<feature>/       # components + index.ts public surface
+hooks/ lib/ public/work-images/
 ```
 
-Route groups `(name)` do not affect URLs. `(site)` exists so the navbar and
-designation are inherited automatically by every page inside it. Pages that
-need a different chrome (like `/crafts`) live outside the group and provide
-their own `layout.tsx`.
+Route groups `(name)` do not affect URLs. `(site)` exists to inherit chrome.
 
-## Naming conventions
+## Where to put things
 
-- **Folders and files: kebab-case** (`work-card.tsx`, `nav-list.tsx`,
-  `use-copy-to-clipboard` style). Do not use PascalCase or snake_case filenames.
-- **React components: PascalCase exports**, matching the file
-  (`work-card.tsx` → `WorkCard`).
-- **Hooks: camelCase with `use` prefix** (`useCopyToClipboard`). The existing
-  `useCopyToClipboard.ts` file is an accepted exception; prefer kebab-case for
-  new hook files (`use-mobile.ts`).
-- **Types/interfaces: `T` prefix** for domain models (`TWork`, `TStack`,
-  `TExperiences`). Local prop types can stay inline.
-- **Constants: `UPPER_SNAKE_CASE`** (`NAV_ROUTES`, `WORK_NEWEST_FIRST`).
-- **Event handlers: `handleX`**, booleans read as adjectives (`isActive`,
-  `isMobile`).
-- **Imports: `@/` alias** for cross-folder imports. Relative imports are only
-  used inside the same feature or for local siblings.
+| Task | Location |
+| --- | --- |
+| Page with navbar + designation | `app/(site)/<route>/page.tsx` |
+| Standalone/full-bleed page | `app/<route>/page.tsx` + its own `layout.tsx` |
+| Project/work data | `WORK` in `common/constants.ts` |
+| Timeline data | `EXPERIENCES` in `common/constants.ts` |
+| Nav links | `NAV_ROUTES` in `common/constants.ts` |
+| Stack icons | `ICONS` registry, referenced by key |
+| Domain types | `common/types.ts` (`T` prefix) |
 
-## Creating pages and chrome
+`WORK_NEWEST_FIRST` auto-sorts by `updatedAt`. Work images live in
+`public/work-images/<project>/`; remote hosts need `next.config.ts`.
 
-- New regular page: add it under `app/(site)/<route>/page.tsx`. It automatically
-  gets the navbar + designation.
-- New standalone/full-bleed page: place it outside `(site)` and add a
-  `layout.tsx` if it needs its own shell.
-- Keep `app/layout.tsx` limited to global concerns (fonts, providers, analytics,
-  page transition frame). Do not add page-level widths or nav there.
-- The `(site)` layout owns the `max-w-2xl mx-auto px-4` container.
+## Reusable components — reuse, do not duplicate
 
-## Reusable components
+| Component | Use |
+| --- | --- |
+| `SectionWrapper` | Section label + spacing |
+| `TransitionWrapper` | Route blur/fade frame |
+| `Navbar`, `NavList` | Site chrome / route links |
+| `CraftsSidebar` | `/crafts` sidebar shell |
+| `Sidebar*`, `Sheet*`, `Button`, `Input`, `Separator`, `Skeleton`, `Tooltip` | UI primitives in `components/ui/` |
+| `DottedUnderline` | Hand-drawn link underline |
+| `StatusPing` | Pulsing availability dot |
+| `TooltipStack`, `TechStackSection` | Icon grid with tooltips |
+| `CopyEmail` | Copy-to-clipboard email |
+| `WorkCard`, `WorkRow`, `WorkSection` | Project presentation |
+| `ExperienceSection`, `ExperienceStack` | Timeline / stack icons |
+| `Designation` | Avatar + name/role header |
 
-Prefer reusing these instead of duplicating markup:
+Feature modules export their public surface from `features/<feature>/index.ts`.
 
-| Component | Location | Use |
-| --- | --- | --- |
-| `SectionWrapper` | `components/layouts/section-wrapper.tsx` | Section label + spacing on home |
-| `TransitionWrapper` | `components/layouts/transition-wrapper.tsx` | Route change blur/fade animation |
-| `Navbar`, `NavList` | `components/navigation/` | Site chrome and route links |
-| `CraftsSidebar` | `features/crafts/crafts-sidebar.tsx` | Full sidebar shell for `/crafts` |
-| `Sidebar*`, `Sheet*`, `Button`, `Input`, `Separator`, `Skeleton`, `Tooltip` | `components/ui/` | shadcn-style primitives |
-| `DottedUnderline` | `components/dotted-underline.tsx` | Hand-drawn link underline |
-| `StatusPing` | `features/home/status-ping.tsx` | Pulsing availability dot |
-| `TooltipStack` / `TechStackSection` | `features/tech-stack/` | Icon grid with tooltips |
-| `CopyEmail` | `features/home/copy-email.tsx` | Copy-to-clipboard email affordance |
-| `WorkCard`, `WorkRow`, `WorkSection` | `features/work/` | Project presentation |
-| `ExperienceSection`, `ExperienceStack` | `features/experience/` | Timeline and stack icons |
-| `Designation` | `features/home/designation.tsx` | Avatar + name/role header |
+## Adding shadcn components
 
-Feature modules export their public surface from a local `index.ts` when used
-outside the feature.
+Style is `base-vega` on Base UI (`@base-ui/react`), **not Radix**. The CLI emits
+wrong imports for this repo; after running it, rewrite:
 
-## Styling
+| Generated | Replace with |
+| --- | --- |
+| `from "cn"` | `from "@/lib/utils"` |
+| `@/registry/base-vega/ui/*` | `@/components/ui/*` |
+| `@/registry/base-vega/hooks/*` | `@/hooks/*` |
+| `IconPlaceholder` / lucide icons | Tabler equivalents |
 
-- Tailwind CSS v4 utilities in JSX; no CSS modules or styled-components.
-- Use `cn()` from `@/lib/utils` to merge conditional classes.
-- Design tokens live in `app/globals.css` (`:root` and `.dark`). Reuse tokens
-  (`bg-background`, `text-muted-foreground`, `bg-sidebar`, etc.) for shadcn UI.
-- Visual language: neutral palette, `font-mono` for meta labels/dates,
-  `font-instrument-serif` for accents, muted gray body copy.
-- Dark surfaces are opt-in per subtree with the `dark` class (see crafts layout).
-- Client components require `"use client"` at the top. Keep pages/layouts as
-  server components unless they use hooks, browser APIs, or Motion.
+Do not install the `cn` npm package.
 
-## UI library notes
+## Styling language
 
-- **Icons: use `@tabler/icons-react`.** `lucide-react@1.23.0` in this repo is
-  broken (missing internal modules and fails `pnpm build`); do not import it.
-- shadcn registry style is `base-vega` on Base UI (`@base-ui/react`), not Radix.
-- The shadcn CLI currently emits `cn` npm imports and `@/registry/...` paths for
-  this style. When adding registry components, rewrite:
-  - `from "cn"` → `from "@/lib/utils"`
-  - `@/registry/base-vega/ui/*` → `@/components/ui/*`
-  - `@/registry/base-vega/hooks/*` → `@/hooks/*`
-  - Replace `IconPlaceholder` / lucide icon imports with Tabler equivalents.
-- Do not add the `cn` npm package.
+Neutral palette; `font-mono` for meta labels/dates; `font-instrument-serif` for
+accents; muted gray body copy. Dark surfaces are opt-in with the `dark` class on
+a subtree (see `/crafts`).
 
-## Content and data
+## Commits
 
-- Add/edit projects in `WORK` (`common/constants.ts`). `WORK_NEWEST_FIRST` sorts
-  by `updatedAt` automatically.
-- Add/edit timeline entries in `EXPERIENCES`.
-- Register stack icons in the `ICONS` object and reference them by key.
-- Work images live in `public/work-images/<project>/`; remote images need a
-  host entry in `next.config.ts`.
-- Navigation links come from `NAV_ROUTES`.
-
-## Git and commits
-
-- Follow Conventional Commits: `<type>(<scope>): <summary>`.
-  Types: `feat`, `fix`, `refactor`, `perf`, `style`, `docs`, `chore`, `build`,
-  `test`. Summary is imperative, lowercase, and concise.
-- **When asked to "commit all changes", split the work into logical, coherent
-  commits instead of one giant commit.** Group by concern, for example:
-  1. `refactor(routing): move site pages into (site) route group`
-  2. `feat(crafts): add shadcn sidebar layout`
-  3. `docs(agents): document project structure and conventions`
-- Stage explicit paths per commit. Inspect `git status`, `git diff`, and
-  `git log --oneline -10` first.
-- Never commit `.env`, secrets, `node_modules/`, or `.next/`. Do not amend,
-  force-push, or push unless explicitly requested.
-- Keep commit history aligned with the existing style (see `git log`).
+- Conventional Commits: `<type>(<scope>): <summary>`; imperative, lowercase.
+  Types: `feat fix refactor perf style docs chore build test`.
+- **"commit all changes" means split into logical, coherent commits** (routing,
+  feature, docs, etc.), not one giant commit. Stage explicit paths.
+- Inspect `git status`, `git diff`, `git log --oneline -10` first.
+- Never commit `.env`, secrets, `node_modules/`, `.next/`. No amend, force-push,
+  or push unless explicitly requested.
