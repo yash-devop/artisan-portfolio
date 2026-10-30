@@ -1,6 +1,6 @@
 "use client";
 
-import { NAV_ROUTES } from "@/common/constants";
+import { SIDEBAR_DATA } from "@/common/constants";
 import {
   Sidebar,
   SidebarContent,
@@ -13,26 +13,18 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarProvider,
-  SidebarRail,
   SidebarTrigger,
+  useSidebar,
 } from "@/components/ui/sidebar";
 import { cn } from "@/lib/utils";
-import {
-  IconBriefcase,
-  IconHome,
-  IconSchool,
-  IconSparkles,
-  type Icon,
-} from "@tabler/icons-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-const ROUTE_ICONS: Record<string, Icon> = {
-  Home: IconHome,
-  Crafts: IconSparkles,
-  Work: IconBriefcase,
-  Experience: IconSchool,
+import { motion } from "motion/react";
+const GROUP_COLOR_CLASSES: Record<string, string> = {
+  pink: "text-pink-600",
+  green: "text-green-600",
+  cyan: "text-cyan-600",
+  yellow: "text-yellow-600",
 };
 
 const isRouteActive = (pathname: string, href: string) =>
@@ -40,55 +32,77 @@ const isRouteActive = (pathname: string, href: string) =>
     ? href === "/"
     : pathname === href || pathname.startsWith(`${href}/`);
 
-export const CraftsSidebar = ({
-  children,
-}: {
-  children: React.ReactNode;
-}) => {
+export const CraftsSidebar = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname();
-
+  const { open } = useSidebar();
   return (
-    <SidebarProvider className="dark min-h-svh bg-neutral-900 text-foreground">
-      <Sidebar collapsible="icon">
+    <>
+      <Sidebar collapsible="icon" className="absolute inset-y-0 h-full">
         <SidebarHeader>
           <SidebarMenu>
             <SidebarMenuItem>
-              <SidebarMenuButton size="lg" render={<Link href="/" />}>
-                <div className="size-8 shrink-0 rounded-md border border-neutral-200 bg-linear-to-tr from-white to-indigo-500" />
-                <div className="flex flex-col gap-0.5 leading-none">
-                  <span className="font-medium">Yash Kamble</span>
-                  <span className="text-xs text-sidebar-foreground/60">
-                    Engineer / Freelancer
-                  </span>
-                </div>
+              <SidebarMenuButton
+                size="lg"
+                className="hover:bg-transparent focus:bg-transparent active:bg-transparent font-serif italic"
+              >
+                <div
+                  className={`size-6 shrink-0 rounded-sm border ${!open ? "border-neutral-800" : "border-neutral-300"}  bg-linear-to-tr from-white to-indigo-500`}
+                />
+                <span className="font-medium">Artisan.</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
           </SidebarMenu>
         </SidebarHeader>
 
-        <SidebarContent>
-          <SidebarGroup>
-            <SidebarGroupLabel>Explore</SidebarGroupLabel>
-            <SidebarGroupContent>
-              <SidebarMenu>
-                {NAV_ROUTES.map((route) => {
-                  const RouteIcon = ROUTE_ICONS[route.name] ?? IconSparkles;
-                  return (
-                    <SidebarMenuItem key={route.id}>
-                      <SidebarMenuButton
-                        render={<Link href={route.href} />}
-                        isActive={isRouteActive(pathname, route.href)}
-                        tooltip={route.name}
-                      >
-                        <RouteIcon />
-                        <span>{route.name}</span>
-                      </SidebarMenuButton>
-                    </SidebarMenuItem>
-                  );
-                })}
-              </SidebarMenu>
-            </SidebarGroupContent>
-          </SidebarGroup>
+        <SidebarContent className="items-center justify-center">
+          {SIDEBAR_DATA?.length > 0
+            ? SIDEBAR_DATA.map((data) => {
+                const GroupIcon = data.group.icon;
+                return (
+                  <SidebarGroup key={data.id}>
+                    <SidebarGroupLabel className="gap-x-1 cursor-default select-none ">
+                      <GroupIcon
+                        className={cn(
+                          "size-3.5",
+                          data.group.defaultClassName,
+                          GROUP_COLOR_CLASSES[data.group.color] ??
+                            "text-neutral-400",
+                        )}
+                      />
+                      <span className="font-medium text-neutral-100">
+                        {data.group.name}
+                      </span>
+                    </SidebarGroupLabel>
+                    <SidebarGroupContent className="pl-0.5">
+                      <SidebarMenu className="mt-2">
+                        {data.routes.map((route) => {
+                          const isActive = isRouteActive(
+                            pathname,
+                            route.slug + route.href,
+                          );
+
+                          return (
+                            <SidebarMenuItem key={route.id}>
+                              <SidebarMenuButton
+                                render={<Link href={route.slug + route.href} />}
+                                tooltip={route.name}
+                                className={cn(
+                                  `hover:bg-transparent active:bg-transparent focus:bg-transparent focus-visible:ring-neutral-800 focus-visible:ring-1 focus-visible:shadow-none text-xs text-neutral-400 rounded-none transition-[color,padding-left] duration-300 ease-out relative`,
+                                  isActive && "text-neutral-100 pl-8",
+                                )}
+                              >
+                                {isActive && <NavigatorActiveBall />}
+                                <span>{route.name}</span>
+                              </SidebarMenuButton>
+                            </SidebarMenuItem>
+                          );
+                        })}
+                      </SidebarMenu>
+                    </SidebarGroupContent>
+                  </SidebarGroup>
+                );
+              })
+            : null}
         </SidebarContent>
 
         <SidebarFooter>
@@ -97,18 +111,27 @@ export const CraftsSidebar = ({
             Available for work
           </div>
         </SidebarFooter>
-        <SidebarRail />
       </Sidebar>
 
       <SidebarInset className={cn("bg-neutral-900")}>
         <header className="flex h-14 shrink-0 items-center gap-2 border-b border-white/10 px-4">
-          <SidebarTrigger />
+          <SidebarTrigger className={"md:hidden"} />
           <span className="font-mono text-xs uppercase tracking-widest text-neutral-400">
             /crafts
           </span>
         </header>
         <div className="flex-1 overflow-auto p-4">{children}</div>
       </SidebarInset>
-    </SidebarProvider>
+    </>
+  );
+};
+
+const NavigatorActiveBall = () => {
+  return (
+    <motion.span
+      layoutId="nav-ball"
+      transition={{ type: "spring", stiffness: 450, damping: 32 }}
+      className="absolute left-4 top-[calc(50%-0.1875rem)] size-1.5 rounded-full bg-cyan-500"
+    />
   );
 };
