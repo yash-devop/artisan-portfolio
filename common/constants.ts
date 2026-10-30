@@ -16,7 +16,13 @@ import { DockerIcon } from "@/components/icons/docker";
 import { ChatgptIcon } from "@/components/icons/chatgpt";
 import { ClaudeIcon } from "@/components/icons/claude";
 import { GithubIcon } from "@/components/icons/github";
-
+import {
+  IconLayersSubtract,
+  IconLayoutGrid,
+  IconNavigation,
+  IconProps,
+} from "@tabler/icons-react";
+import { ForwardRefExoticComponent, RefAttributes } from "react";
 export const NAV_ROUTES = [
   {
     id: 1,
@@ -314,5 +320,103 @@ export const WORK: TWork[] = [
 ];
 
 export const WORK_NEWEST_FIRST = [...WORK].sort(
-  (a, b) => Date.parse(b.updatedAt) - Date.parse(a.updatedAt)
+  (a, b) => Date.parse(b.updatedAt) - Date.parse(a.updatedAt),
+);
+
+const SIDEBAR_GROUPS: {
+  group: {
+    name: string;
+    defaultClassName?: string;
+    icon: ForwardRefExoticComponent<IconProps & RefAttributes<SVGSVGElement>>;
+    color: string;
+  };
+  routes: {
+    name: string;
+    slug: string;
+    href: string;
+  }[];
+}[] = [
+  {
+    group: {
+      name: "Loader",
+      icon: IconLayoutGrid,
+      color: "cyan",
+    },
+    routes: [
+      {
+        name: "Shimmer",
+        slug: "/crafts",
+        href: "/shimmer",
+      },
+    ],
+  },
+  {
+    group: {
+      name: "Needful",
+      icon: IconLayoutGrid,
+      color: "pink",
+    },
+    routes: [
+      {
+        name: "Button",
+        slug: "/crafts",
+        href: "/button",
+      },
+      {
+        name: "Code Block",
+        slug: "/crafts",
+        href: "/code-block",
+      },
+      {
+        name: "PackageInstaller",
+        slug: "/crafts",
+        href: "/package-installer",
+      },
+    ],
+  },
+  {
+    group: {
+      name: "Overlay",
+      icon: IconLayersSubtract,
+      color: "green",
+    },
+    routes: [
+      {
+        name: "Popover",
+        slug: "/crafts",
+        href: "/popover",
+      },
+      {
+        name: "Modal",
+        slug: "/crafts",
+        href: "/modal",
+      },
+    ],
+  },
+  {
+    group: {
+      name: "Navigation",
+      icon: IconNavigation,
+      defaultClassName: "rotate-45 mb-0.5",
+      color: "yellow",
+    },
+    routes: [
+      {
+        name: "Navigation Menu",
+        slug: "/crafts",
+        href: "/navigation-menu",
+      },
+    ],
+  },
+];
+
+export const SIDEBAR_DATA = SIDEBAR_GROUPS.map(
+  ({ group, routes }, groupIndex) => ({
+    id: groupIndex + 1,
+    group,
+    routes: routes.map((route, routeIndex) => ({
+      id: `r${groupIndex + 1}-${routeIndex + 1}`,
+      ...route,
+    })),
+  }),
 );
