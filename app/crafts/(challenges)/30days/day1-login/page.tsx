@@ -15,14 +15,14 @@ export default function Day1LoginPage() {
             <label className="text-sm px-0.5">Email</label>
             <input
               placeholder="Eg: jane@example.com"
-              className="h-10 [box-shadow:inset_0_0_0_1px_var(--color-neutral-700)]  px-3 py-2.5 w-full text-neutral-400 rounded-md focus:outline-none placeholder:text-sm placeholder:text-neutral-600"
+              className="h-10 [box-shadow:inset_0_0_0_1px_var(--color-neutral-700)]  px-3 w-full text-neutral-400 rounded-md focus:outline-none placeholder:text-sm placeholder:text-neutral-600 text-sm"
             />
           </div>
           <div className="flex flex-col gap-1.5 w-full">
             <label className="text-sm px-0.5">Password</label>
             <input
               placeholder="*********"
-              className="h-10 [box-shadow:inset_0_0_0_1px_var(--color-neutral-700)] px-3 py-2.5 w-full text-neutral-400 rounded-md focus:outline-none placeholder:text-sm placeholder:text-neutral-600"
+              className="h-10 [box-shadow:inset_0_0_0_1px_var(--color-neutral-700)] px-3 w-full text-neutral-400 rounded-md focus:outline-none placeholder:text-sm placeholder:text-neutral-600 text-sm"
             />
           </div>
           <div className="flex flex-col gap-1.5 w-full pt-2">
