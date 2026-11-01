@@ -51,12 +51,14 @@ void main() {
 `;
 
 function compile(gl: WebGLRenderingContext, type: number, src: string) {
+  if (gl.isContextLost()) return null;
   const shader = gl.createShader(type);
   if (!shader) return null;
   gl.shaderSource(shader, src);
   gl.compileShader(shader);
   if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-    console.error(gl.getShaderInfoLog(shader));
+    const log = gl.getShaderInfoLog(shader);
+    if (log) console.error(log);
     gl.deleteShader(shader);
     return null;
   }
@@ -78,7 +80,7 @@ export default function AnimatedGrid() {
       powerPreference: "low-power",
       premultipliedAlpha: true,
     });
-    if (!gl) return; // falls back to the plain background colour
+    if (!gl || gl.isContextLost()) return; // falls back to the plain background colour
 
     const vs = compile(gl, gl.VERTEX_SHADER, VERT);
     const fs = compile(gl, gl.FRAGMENT_SHADER, FRAG);
@@ -187,7 +189,6 @@ export default function AnimatedGrid() {
       gl.deleteProgram(program);
       gl.deleteShader(vs);
       gl.deleteShader(fs);
-      gl.getExtension("WEBGL_lose_context")?.loseContext();
     };
   }, []);
 
