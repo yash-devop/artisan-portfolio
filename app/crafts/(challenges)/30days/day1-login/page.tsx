@@ -8,9 +8,15 @@ import AnimatedGrid from "./randomized-dots";
 
 export default function Day1LoginPage() {
   return (
-    <div className="flex min-h-full w-full flex-col rounded-xl border border-neutral-700/50 bg-neutral-800/20 md:h-full md:flex-row">
+    <div className="flex min-h-full w-full flex-col rounded-xl border border-neutral-700/50 bg-neutral-800/20 md:h-full md:flex-row tracking-tight">
       <div className="flex min-h-[calc(100dvh-6rem)] w-full items-center justify-center border-b border-neutral-700/50 px-6 py-10 md:h-full md:min-h-0 md:w-1/2 md:border-r md:border-b-0 md:px-0 md:py-0">
         <div className="mx-auto flex w-full max-w-sm flex-col gap-4">
+          <div className="flex flex-col gap-1">
+            <h1 className="text-lg">Signin with Sloth</h1>
+            <p className="text-sm text-neutral-400">
+              Welcome back. Enter your details to continue.
+            </p>
+          </div>
           <div className="flex flex-col gap-1.5 w-full">
             <label className="text-sm px-0.5">Email</label>
             <input
@@ -44,11 +50,18 @@ export default function Day1LoginPage() {
       </div>
       <div className="relative w-full md:h-full md:min-h-0 md:w-1/2">
         <AnimatedGrid />
-        <div className="absolute inset-0 z-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-6 px-6 text-white/80">
-          <SlackWordmarkIcon className="h-5 w-auto shrink-0" />
-          <StripeIcon className="h-5 w-auto shrink-0" />
-          <SupabaseWordmarkIcon className="h-5 w-auto shrink-0" />
-          <VercelWordMarkIcon className="h-5 w-auto shrink-0" />
+        <div className="absolute inset-0 z-10 h-full">
+          <div className="h-full px-6 flex flex-col items-center justify-center gap-5">
+            <span className="text-sm font-medium tracking-tight">
+              Trusted by companies
+            </span>
+            <div className="flex flex-wrap items-start justify-start gap-x-8 gap-y-6 text-white/80">
+              <SlackWordmarkIcon className="h-5 w-auto shrink-0" />
+              <StripeIcon className="h-5 w-auto shrink-0" />
+              <SupabaseWordmarkIcon className="h-5 w-auto shrink-0" />
+              <VercelWordMarkIcon className="h-5 w-auto shrink-0" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
