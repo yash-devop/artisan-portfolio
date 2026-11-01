@@ -418,8 +418,8 @@ const SIDEBAR_GROUPS: {
     routes: [
       {
         name: "Day-1",
-        slug: "/crafts/challenge",
-        href: "/day1",
+        slug: "/crafts/30days",
+        href: "/day1-login",
       },
     ],
   },
