@@ -195,7 +195,7 @@ export default function AnimatedGrid() {
   return (
     <canvas
       ref={canvasRef}
-      className="h-full w-full opacity-30 bg-radial from-10% from-transparent to-black/90"
+      className="md:h-full w-full opacity-30 bg-radial from-10% from-transparent to-black/90"
       aria-hidden="true"
     />
   );
