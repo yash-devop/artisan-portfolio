@@ -1,3 +1,5 @@
+import { redirect } from "next/navigation";
+
 export default function CraftsPage() {
-  return <div className="w-full max-w-full">Crafts</div>;
+  return redirect("/crafts/shimmer");
 }
