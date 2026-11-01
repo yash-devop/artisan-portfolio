@@ -25,6 +25,7 @@ const GROUP_COLOR_CLASSES: Record<string, string> = {
   green: "text-green-600",
   cyan: "text-cyan-600",
   yellow: "text-yellow-600",
+  orange: "text-orange-600",
 };
 
 const isRouteActive = (pathname: string, href: string) =>

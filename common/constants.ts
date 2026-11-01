@@ -1,4 +1,16 @@
+import { ChatgptIcon } from "@/components/icons/chatgpt";
+import { ClaudeIcon } from "@/components/icons/claude";
+import { DockerIcon } from "@/components/icons/docker";
+import { GithubIcon } from "@/components/icons/github";
 import { MotionDevIcon } from "@/components/icons/motion-dev";
+import {
+  IconBackground,
+  IconLayersSubtract,
+  IconLayoutGrid,
+  IconNavigation,
+  IconProps,
+} from "@tabler/icons-react";
+import { ForwardRefExoticComponent, RefAttributes } from "react";
 import { AmazonAwsIcon } from "../components/icons/aws";
 import { FigmaIcon } from "../components/icons/figma";
 import { MongodbWordmarkIcon } from "../components/icons/mongo";
@@ -12,17 +24,6 @@ import { TailwindIcon } from "../components/icons/tailwind";
 import { TurborepoIcon } from "../components/icons/turbo-repo";
 import { VercelIcon } from "../components/icons/vercel";
 import { TExperiences, TWork } from "./types";
-import { DockerIcon } from "@/components/icons/docker";
-import { ChatgptIcon } from "@/components/icons/chatgpt";
-import { ClaudeIcon } from "@/components/icons/claude";
-import { GithubIcon } from "@/components/icons/github";
-import {
-  IconLayersSubtract,
-  IconLayoutGrid,
-  IconNavigation,
-  IconProps,
-} from "@tabler/icons-react";
-import { ForwardRefExoticComponent, RefAttributes } from "react";
 export const NAV_ROUTES = [
   {
     id: 1,
@@ -405,6 +406,20 @@ const SIDEBAR_GROUPS: {
         name: "Navigation Menu",
         slug: "/crafts",
         href: "/navigation-menu",
+      },
+    ],
+  },
+  {
+    group: {
+      name: "Days 30 UI",
+      icon: IconBackground,
+      color: "orange",
+    },
+    routes: [
+      {
+        name: "Day-1",
+        slug: "/crafts/challenge",
+        href: "/day1",
       },
     ],
   },
