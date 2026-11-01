@@ -4,7 +4,6 @@ import { SIDEBAR_DATA } from "@/common/constants";
 import {
   Sidebar,
   SidebarContent,
-  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
@@ -17,9 +16,9 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar";
 import { cn } from "@/lib/utils";
+import { motion } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion } from "motion/react";
 const GROUP_COLOR_CLASSES: Record<string, string> = {
   pink: "text-pink-600",
   green: "text-green-600",
@@ -105,13 +104,6 @@ export const CraftsSidebar = ({ children }: { children: React.ReactNode }) => {
               })
             : null}
         </SidebarContent>
-
-        <SidebarFooter>
-          <div className="flex items-center gap-2 rounded-md px-2 py-1.5 text-xs text-sidebar-foreground/60 group-data-[collapsible=icon]:hidden">
-            <span className="size-1.5 rounded-full bg-emerald-500" />
-            Available for work
-          </div>
-        </SidebarFooter>
       </Sidebar>
 
       <SidebarInset className={cn("bg-neutral-900")}>
