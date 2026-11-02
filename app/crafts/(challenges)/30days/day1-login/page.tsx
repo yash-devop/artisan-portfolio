@@ -5,10 +5,11 @@ import { StripeIcon } from "@/components/icons/stripe";
 import { SupabaseWordmarkIcon } from "@/components/icons/supabase";
 import { VercelWordMarkIcon } from "@/components/icons/vercel-wordmark";
 import AnimatedGrid from "./randomized-dots";
+import { BlockWrapper } from "@/components/layouts/block-wrapper";
 
 export default function Day1LoginPage() {
   return (
-    <div className="flex min-h-full w-full flex-col rounded-xl border border-neutral-700/50 bg-neutral-800/20 md:h-full md:flex-row tracking-tight">
+    <BlockWrapper>
       <div className="flex min-h-[calc(100dvh-6rem)] w-full items-center justify-center border-b border-neutral-700/50 px-6 py-10 md:h-full md:min-h-0 md:w-1/2 md:border-r md:border-b-0 md:px-0 md:py-0">
         <div className="mx-auto flex w-full max-w-sm flex-col gap-4">
           <div className="flex flex-col gap-1">
@@ -37,11 +38,11 @@ export default function Day1LoginPage() {
             </button>
           </div>
           <div className="flex w-full items-center gap-3">
-            <button className="flex h-10 flex-1 items-center justify-center gap-2 rounded-md bg-neutral-100 text-sm font-medium text-neutral-900 transition-colors hover:bg-white">
+            <button className="flex h-10 flex-1 items-center justify-center gap-2 rounded-md bg-neutral-100 text-sm font-medium text-neutral-900 transition-colors hover:bg-white cursor-pointer">
               <GoogleIcon className="size-4 shrink-0" />
               Google
             </button>
-            <button className="flex h-10 flex-1 items-center justify-center gap-2 rounded-md bg-neutral-100 text-sm font-medium text-neutral-900 transition-colors hover:bg-white">
+            <button className="flex h-10 flex-1 items-center justify-center gap-2 rounded-md bg-neutral-100 text-sm font-medium text-neutral-900 transition-colors hover:bg-white cursor-pointer">
               <GithubIcon className="size-4 shrink-0" />
               GitHub
             </button>
@@ -64,6 +65,6 @@ export default function Day1LoginPage() {
           </div>
         </div>
       </div>
-    </div>
+    </BlockWrapper>
   );
 }
