@@ -411,20 +411,25 @@ const SIDEBAR_GROUPS: {
   },
   {
     group: {
-      name: "Days 30 UI",
+      name: "Days 30 UI Blocks",
       icon: IconBackground,
       color: "orange",
     },
     routes: [
       {
-        name: "Day-1",
+        name: "Day1-Login",
         slug: "/crafts/30days",
         href: "/day1-login",
       },
       {
-        name: "Day-2",
+        name: "Day2-Switch",
         slug: "/crafts/30days",
         href: "/day2-switch",
+      },
+      {
+        name: "Day3-Iconstack",
+        slug: "/crafts/30days",
+        href: "/day3-iconstack",
       },
     ],
   },
