@@ -70,7 +70,7 @@ export const WorkspaceBlock = ({
         <Button
           variant="outline"
           size="lg"
-          className={outlineButtonVariants({ tone })}
+          // className={outlineButtonVariants({ tone })}
         >
           Connect source
         </Button>
