@@ -9,7 +9,7 @@ import { BlockWrapper } from "@/components/layouts/block-wrapper";
 
 export default function Day1LoginPage() {
   return (
-    <BlockWrapper>
+    <BlockWrapper className="items-center justify-center h-full">
       <div className="flex min-h-[calc(100dvh-6rem)] w-full items-center justify-center border-b border-neutral-700/50 px-6 py-10 md:h-full md:min-h-0 md:w-1/2 md:border-r md:border-b-0 md:px-0 md:py-0">
         <div className="mx-auto flex w-full max-w-sm flex-col gap-4">
           <div className="flex flex-col gap-1">
