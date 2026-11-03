@@ -59,7 +59,7 @@ export const WorkspaceBlock = ({
       <IsometricIconStack tone={tone} />
       <div className="flex flex-col gap-2 items-center justify-center">
         <span>Workspace is ready</span>
-        <span className={descriptionVariants({ tone })}>
+        <span className="text-neutral-500 max-w-[260px] text-center">
           Invite teammates or connect a data source to start filling this view.
         </span>
       </div>
