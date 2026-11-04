@@ -91,8 +91,25 @@ export const CraftsSidebar = ({ children }: { children: React.ReactNode }) => {
                                   isActive && "text-neutral-100 pl-8",
                                 )}
                               >
-                                {isActive && <NavigatorActiveBall />}
-                                <span>{route.name}</span>
+                                {isActive && (
+                                  <NavigatorActiveBall
+                                    backgroundColor={data.group.tailwindBgColor}
+                                  />
+                                )}
+                                <motion.span
+                                  key={String(isActive)}
+                                  animate={
+                                    isActive && {
+                                      color: data.group.tailwindColor,
+                                    }
+                                  }
+                                  transition={{
+                                    delay: 0.18,
+                                    type: "tween",
+                                  }}
+                                >
+                                  {route.name}
+                                </motion.span>
                               </SidebarMenuButton>
                             </SidebarMenuItem>
                           );
@@ -113,18 +130,28 @@ export const CraftsSidebar = ({ children }: { children: React.ReactNode }) => {
             /crafts
           </span>
         </header>
-        <div className="flex-1 overflow-auto p-4">{children}</div>
+        <div className="flex-1 overflow-auto p-1.5 md:p-4">{children}</div>
       </SidebarInset>
     </>
   );
 };
 
-const NavigatorActiveBall = () => {
+const NavigatorActiveBall = ({
+  backgroundColor,
+}: {
+  backgroundColor: string;
+}) => {
   return (
     <motion.span
       layoutId="nav-ball"
       transition={{ type: "spring", stiffness: 450, damping: 32 }}
-      className="absolute left-4 top-[calc(50%-0.1875rem)] size-1.5 rounded-full bg-cyan-500"
+      style={{
+        background: backgroundColor,
+      }}
+      className={cn(
+        `absolute left-4 top-[calc(50%-0.24rem)] size-2 shrink-0 rounded-full`,
+        backgroundColor,
+      )}
     />
   );
 };

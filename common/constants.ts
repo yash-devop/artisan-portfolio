@@ -330,6 +330,8 @@ const SIDEBAR_GROUPS: {
     defaultClassName?: string;
     icon: ForwardRefExoticComponent<IconProps & RefAttributes<SVGSVGElement>>;
     color: string;
+    tailwindColor: string;
+    tailwindBgColor: string;
   };
   routes: {
     name: string;
@@ -342,6 +344,8 @@ const SIDEBAR_GROUPS: {
       name: "Loader",
       icon: IconLayoutGrid,
       color: "cyan",
+      tailwindColor: "var(--color-cyan-500)",
+      tailwindBgColor: "var(--color-cyan-500)",
     },
     routes: [
       {
@@ -356,6 +360,8 @@ const SIDEBAR_GROUPS: {
       name: "Needful",
       icon: IconLayoutGrid,
       color: "pink",
+      tailwindColor: "var(--color-pink-500)",
+      tailwindBgColor: "var(--color-pink-500)",
     },
     routes: [
       {
@@ -380,6 +386,8 @@ const SIDEBAR_GROUPS: {
       name: "Overlay",
       icon: IconLayersSubtract,
       color: "green",
+      tailwindColor: "var(--color-emerald-500)",
+      tailwindBgColor: "var(--color-emerald-500)",
     },
     routes: [
       {
@@ -400,6 +408,8 @@ const SIDEBAR_GROUPS: {
       icon: IconNavigation,
       defaultClassName: "rotate-45 mb-0.5",
       color: "yellow",
+      tailwindColor: "var(--color-yellow-500)",
+      tailwindBgColor: "var(--color-yellow-500)",
     },
     routes: [
       {
@@ -414,6 +424,8 @@ const SIDEBAR_GROUPS: {
       name: "Days 30 UI Blocks",
       icon: IconBackground,
       color: "orange",
+      tailwindColor: "var(--color-orange-500)",
+      tailwindBgColor: "var(--color-orange-500)",
     },
     routes: [
       {
@@ -431,6 +443,16 @@ const SIDEBAR_GROUPS: {
         slug: "/crafts/30days",
         href: "/day3-iconstack",
       },
+      {
+        name: "Day4-Shimmer",
+        slug: "/crafts/30days",
+        href: "/day4-shimmer",
+      },
+      // {
+      //   name: "Day5-TaskList",
+      //   slug: "/crafts/30days",
+      //   href: "/day5-tasklist",
+      // }
     ],
   },
 ];
