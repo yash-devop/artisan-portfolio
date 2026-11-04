@@ -67,11 +67,7 @@ export const WorkspaceBlock = ({
         <Button size="lg" className={primaryButtonVariants({ tone })}>
           Invite teammates
         </Button>
-        <Button
-          variant="outline"
-          size="lg"
-          // className={outlineButtonVariants({ tone })}
-        >
+        <Button variant="outline" size="lg">
           Connect source
         </Button>
       </div>
