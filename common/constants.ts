@@ -448,11 +448,11 @@ const SIDEBAR_GROUPS: {
         slug: "/crafts/30days",
         href: "/day4-shimmer",
       },
-      // {
-      //   name: "Day5-TaskList",
-      //   slug: "/crafts/30days",
-      //   href: "/day5-tasklist",
-      // }
+      {
+        name: "Day5-TaskList",
+        slug: "/crafts/30days",
+        href: "/day5-tasklist",
+      },
     ],
   },
 ];
