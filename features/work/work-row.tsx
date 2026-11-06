@@ -35,8 +35,8 @@ export const WorkRow = ({
         <Image
           width={14}
           height={10}
-          alt="work-image"
-          unoptimized
+          alt={`${name} project preview`}
+          sizes="56px"
           src={thumbnail}
           className="w-14 h-10 object-cover rounded-md shrink-0"
         />

@@ -100,10 +100,11 @@ export const WorkDetail = ({ work }: { work: TWork }) => {
           >
             <Image
               src={image}
-              alt=""
+              alt={`${work.name} project screenshot ${idx + 1}`}
               width={20}
               height={10}
-              unoptimized
+              sizes="(min-width: 768px) 672px, calc(100vw - 2rem)"
+              priority={idx === 0}
               className="w-full shadow-lg rounded-md p-px border border-neutral-300 bg-white"
             />
           </motion.div>

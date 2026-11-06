@@ -7,7 +7,6 @@ import Link from "next/link";
 
 const workCardVariants: Variants = {
   initial: ({ idx, imagesLength }: { idx: number; imagesLength: number }) => {
-    console.log("Idx", idx, imagesLength);
     return {
       rotate: idx === 0 ? "-8deg" : idx === imagesLength ? "8deg" : "0deg",
       x: idx === 1 ? "-40px" : idx === imagesLength ? "-64px" : "0px",
@@ -70,10 +69,10 @@ export const WorkCard = ({
               >
                 <Image
                   src={image}
-                  alt=""
+                  alt={`${name} project screenshot ${idx + 1}`}
                   width={20}
                   height={10}
-                  unoptimized
+                  sizes="(min-width: 768px) 80px, 128px"
                   className="w-32 h-14 md:w-20 md:h-10 shadow-lg rounded-md p-px border border-neutral-300 bg-white"
                 />
               </motion.div>
