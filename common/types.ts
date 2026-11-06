@@ -1,4 +1,3 @@
-import { SVGProps } from "react";
 import { ICONS } from "./constants";
 
 export type TExperiences = {

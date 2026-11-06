@@ -19,7 +19,6 @@ const workCardVariants: Variants = {
   }),
 };
 export const WorkCard = ({
-  description,
   images,
   name,
   id,

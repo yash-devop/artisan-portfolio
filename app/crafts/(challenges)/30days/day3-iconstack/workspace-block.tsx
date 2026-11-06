@@ -1,23 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
+import { cva, type VariantProps } from "class-variance-authority";
 import { IsometricIconStack } from "./isometric-icon-stack";
 
 const blockVariants = cva(
   "flex w-full flex-1 flex-col items-center justify-center gap-4",
 );
-const descriptionVariants = cva("max-w-[260px] text-center", {
-  variants: {
-    tone: {
-      neutral: "text-neutral-500",
-      emerald: "text-emerald-500",
-    },
-  },
-  defaultVariants: {
-    tone: "neutral",
-  },
-});
-
 const primaryButtonVariants = cva("", {
   variants: {
     tone: {
@@ -30,21 +18,8 @@ const primaryButtonVariants = cva("", {
   },
 });
 
-const outlineButtonVariants = cva("", {
-  variants: {
-    tone: {
-      neutral: "",
-      emerald:
-        "border-emerald-500/40 text-emerald-400 hover:bg-emerald-500/10 hover:text-emerald-300",
-    },
-  },
-  defaultVariants: {
-    tone: "neutral",
-  },
-});
-
 export type TWorkspaceBlockTone = NonNullable<
-  VariantProps<typeof descriptionVariants>["tone"]
+  VariantProps<typeof primaryButtonVariants>["tone"]
 >;
 
 export const WorkspaceBlock = ({

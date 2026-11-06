@@ -1,4 +1,4 @@
-import { EXPERIENCES, ICONS } from "@/common/constants";
+import { EXPERIENCES } from "@/common/constants";
 import { ExperienceStack } from "./experience-stack";
 
 export const ExperienceSection = ({ slice }: { slice?: number }) => {
@@ -31,7 +31,7 @@ export const ExperienceSection = ({ slice }: { slice?: number }) => {
               </div>
               {experience.stack ? (
                 <div className="[&_svg]:size-5 flex items-center gap-4 pt-4">
-                  {experience.stack.map(({ icon, name }, idx) => {
+                  {experience.stack.map(({ icon, name }) => {
                     return (
                       <ExperienceStack key={name} name={name} icon={icon} />
                     );

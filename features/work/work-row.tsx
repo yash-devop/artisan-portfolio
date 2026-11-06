@@ -2,9 +2,9 @@
 import { TWork } from "@/common/types";
 import { formatYear } from "@/lib/work-date";
 import { IconArrowUp } from "@tabler/icons-react";
+import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "motion/react";
 
 const item = {
   hidden: {
@@ -21,14 +21,11 @@ const item = {
 };
 export const WorkRow = ({
   id,
-  idx,
   name,
   thumbnail,
   description,
   updatedAt,
-}: TWork & {
-  idx: number;
-}) => {
+}: TWork) => {
   return (
     <Link
       href={`/work/${id}`}
