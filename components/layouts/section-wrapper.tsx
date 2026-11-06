@@ -14,9 +14,9 @@ export const SectionWrapper = ({
     <section className={`flex flex-col pt-4`}>
       <div className="flex items-center gap-x-4">
         <div className="h-px w-10 bg-neutral-300" />
-        <span className="font-mono uppercase text-neutral-400 text-xs select-none">
+        <h2 className="font-mono uppercase text-neutral-400 text-xs select-none">
           {name}
-        </span>
+        </h2>
       </div>
       <div className={cn(`flex flex-col pt-5 pb-20`, className)}>
         {children}

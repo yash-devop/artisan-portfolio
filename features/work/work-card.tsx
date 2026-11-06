@@ -28,7 +28,11 @@ export const WorkCard = ({
   images: [string, string, string];
 }) => {
   return (
-    <Link href={"/work/" + id} className="outline-none">
+    <Link
+      href={"/work/" + id}
+      className="outline-none"
+      aria-label={`View ${name} project`}
+    >
       <motion.div
         initial="initial"
         whileHover="hover"
@@ -36,12 +40,15 @@ export const WorkCard = ({
       >
         <div className="flex flex-col text-sm">
           <div className="flex items-baseline gap-2">
-            <motion.span layout="position" layoutId={`work-title-${id}`}>
+            <motion.h3 layout="position" layoutId={`work-title-${id}`}>
               {name}
-            </motion.span>
-            <span className="text-xs font-mono text-neutral-400">
+            </motion.h3>
+            <time
+              dateTime={updatedAt}
+              className="text-xs font-mono text-neutral-400"
+            >
               {formatYear(updatedAt)}
-            </span>
+            </time>
           </div>
 
           <p className="text-neutral-500">{thumbnailDescription}</p>

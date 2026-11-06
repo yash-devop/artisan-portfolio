@@ -1,7 +1,15 @@
 import { EXPERIENCES } from "@/common/constants";
 import { ExperienceStack } from "./experience-stack";
 
-export const ExperienceSection = ({ slice }: { slice?: number }) => {
+export const ExperienceSection = ({
+  slice,
+  headingLevel = "h2",
+}: {
+  slice?: number;
+  headingLevel?: "h2" | "h3";
+}) => {
+  const Heading = headingLevel;
+
   return (
     <div className="flex flex-col gap-16">
       {EXPERIENCES &&
@@ -13,21 +21,21 @@ export const ExperienceSection = ({ slice }: { slice?: number }) => {
             <div className="col-span-4 font-mono text-neutral-500">
               <div className="flex flex-row md:flex-col justify-between sm:justify-between items-center md:items-start gap-1.5 pt-1.5 sticky top-3">
                 <span className="text-xs">{experience.year}</span>
-                <div className="text-xs font-semibold text-neutral-500">
+                <p className="text-xs font-semibold text-neutral-500">
                   {experience.location}
-                </div>
+                </p>
               </div>
             </div>
 
             <div className="col-span-8 pt-1">
               <div className="flex justify-between items-center">
-                <span className="text-sm font-medium text-black">
+                <Heading className="text-sm font-medium text-black">
                   {experience.company}
-                </span>
+                </Heading>
 
-                <span className="text-xs text-neutral-600 uppercase font-mono pt-0.5">
+                <p className="text-xs text-neutral-600 uppercase font-mono pt-0.5">
                   {experience.role}
-                </span>
+                </p>
               </div>
               {experience.stack ? (
                 <div className="[&_svg]:size-5 flex items-center gap-4 pt-4">

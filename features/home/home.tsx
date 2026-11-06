@@ -10,6 +10,7 @@ import Link from "next/link";
 export const Home = () => {
   return (
     <div className="text-[15px] md:text-base pt-8">
+      <h1 className="sr-only">Yash Kamble — Design Engineer</h1>
       <div className="tracking-tight leading-[1.7] text-neutral-500 font-normal">
         <p>
           A Frontend Developer based in India , who loves to give life to his
@@ -63,14 +64,12 @@ export const Home = () => {
           <WorkSection />
         </SectionWrapper>
         <SectionWrapper name="experience">
-          <ExperienceSection slice={2} />
+          <ExperienceSection slice={2} headingLevel="h3" />
           <Link
-            href={"/experience"}
-            className="cursor-pointer w-fit mx-auto mt-12 rounded-md border border-neutral-400 "
+            href="/experience"
+            className="cursor-pointer w-fit mx-auto mt-12 rounded-md border border-neutral-400 px-3 py-1.5 text-sm"
           >
-            <button className="px-3 py-1.5 cursor-pointer text-sm">
-              View more
-            </button>
+            View more
           </Link>
         </SectionWrapper>
       </div>

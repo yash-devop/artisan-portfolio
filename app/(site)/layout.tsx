@@ -8,8 +8,10 @@ export default function SiteLayout({
 }>) {
   return (
     <div className="max-w-2xl mx-auto w-full px-4 pt-8">
-      <Navbar />
-      <Designation />
+      <header>
+        <Navbar />
+        <Designation />
+      </header>
       <main>{children}</main>
     </div>
   );

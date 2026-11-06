@@ -41,17 +41,18 @@ export const WorkRow = ({
           className="w-14 h-10 object-cover rounded-md shrink-0"
         />
         <div className="flex flex-col text-sm">
-          <motion.span className="font-medium">{name}</motion.span>
+          <motion.h2 className="font-medium">{name}</motion.h2>
           <p className="text-neutral-500">{description}</p>
         </div>
       </motion.div>
       <div className="flex items-center gap-3 shrink-0">
-        <span className="text-xs font-mono text-neutral-400">
+        <time dateTime={updatedAt} className="text-xs font-mono text-neutral-400">
           {formatYear(updatedAt)}
-        </span>
+        </time>
         <IconArrowUp
           className="rotate-45 stroke-1 text-neutral-500"
           size={18}
+          aria-hidden
         />
       </div>
     </Link>

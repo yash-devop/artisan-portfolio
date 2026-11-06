@@ -8,7 +8,17 @@ import Link from "next/link";
 
 export const WorkDetail = ({ work }: { work: TWork }) => {
   return (
-    <motion.div className="py-10">
+    <motion.article className="py-10">
+      <nav
+        aria-label="Breadcrumb"
+        className="pb-4 text-xs font-mono text-neutral-400"
+      >
+        <Link href="/work" className="hover:text-neutral-600">
+          Work
+        </Link>
+        <span className="px-2">/</span>
+        <span aria-current="page">{work.name}</span>
+      </nav>
       <motion.div
         layout="position"
         layoutId={`work-title-${work.id}`}
@@ -23,18 +33,25 @@ export const WorkDetail = ({ work }: { work: TWork }) => {
         }}
         className="flex flex-col gap-0.5 pb-4"
       >
-        <span className="font-medium">{work.name}</span>
-        <span className="text-neutral-500">{work.description}</span>
+        <motion.h1 className="font-medium">{work.name}</motion.h1>
+        <p className="text-neutral-500">{work.description}</p>
       </motion.div>
       <div className="flex items-center gap-2 pb-1 text-xs font-mono text-neutral-400">
-        <span>Built {formatMonthYear(work.createdAt)}</span>
+        <time dateTime={work.createdAt}>
+          Built {formatMonthYear(work.createdAt)}
+        </time>
         <span className="text-neutral-300">·</span>
-        <span>Updated {formatMonthYear(work.updatedAt)}</span>
+        <time dateTime={work.updatedAt}>
+          Updated {formatMonthYear(work.updatedAt)}
+        </time>
       </div>
-      <div className="text-sm underline underline-offset-2 space-x-4 py-5 px-0.5">
+      <nav
+        aria-label="Project links"
+        className="text-sm underline underline-offset-2 space-x-4 py-5 px-0.5"
+      >
         {work.links?.github && (
-          <Link href={work.links?.github} className="" target="_blank">
-            <span>Github</span>
+          <Link href={work.links?.github} target="_blank">
+            <span>GitHub</span>
           </Link>
         )}
         {work.links?.live_link && (
@@ -43,7 +60,7 @@ export const WorkDetail = ({ work }: { work: TWork }) => {
             className="hover:brightness-125"
             target="_blank"
           >
-            <span>Live Link</span>
+            <span>Live site</span>
           </Link>
         )}
         {work.links?.other && (
@@ -52,7 +69,7 @@ export const WorkDetail = ({ work }: { work: TWork }) => {
             className="hover:brightness-125"
             target="_blank"
           >
-            <span>Visit</span>
+            <span>View package</span>
           </Link>
         )}
         {work.links?.twitter && (
@@ -61,7 +78,7 @@ export const WorkDetail = ({ work }: { work: TWork }) => {
             className="hover:brightness-125"
             target="_blank"
           >
-            <span>Twitter ( Highly active )</span>
+            <span>Twitter thread</span>
           </Link>
         )}
         {work.links?.linkedin && (
@@ -70,10 +87,10 @@ export const WorkDetail = ({ work }: { work: TWork }) => {
             className="hover:brightness-125"
             target="_blank"
           >
-            <span>Linkedin</span>
+            <span>LinkedIn</span>
           </Link>
         )}
-      </div>
+      </nav>
       <div className="space-y-5">
         {work.images.map((image, idx) => (
           <motion.div
@@ -92,6 +109,6 @@ export const WorkDetail = ({ work }: { work: TWork }) => {
           </motion.div>
         ))}
       </div>
-    </motion.div>
+    </motion.article>
   );
 };

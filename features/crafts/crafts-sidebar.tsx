@@ -130,7 +130,7 @@ export const CraftsSidebar = ({ children }: { children: React.ReactNode }) => {
             /crafts
           </span>
         </header>
-        <div className="flex-1 overflow-auto p-1.5 md:p-4">{children}</div>
+        <main className="flex-1 overflow-auto p-1.5 md:p-4">{children}</main>
       </SidebarInset>
     </>
   );

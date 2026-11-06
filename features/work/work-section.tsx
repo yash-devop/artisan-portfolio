@@ -15,10 +15,11 @@ export const WorkSection = () => {
         );
       })}
 
-      <Link href={`/work`} className="justify-self-center m-auto h-fit">
-        <button className="hover:bg-neutral-100  px-4 py-2 cursor-pointer text-sm h-fit m-auto ring ring-neutral-300 rounded-lg active:scale-[0.98] transition-all -translate-x-4">
-          View all
-        </button>
+      <Link
+        href="/work"
+        className="justify-self-center m-auto h-fit hover:bg-neutral-100 px-4 py-2 cursor-pointer text-sm ring ring-neutral-300 rounded-lg active:scale-[0.98] transition-all -translate-x-4"
+      >
+        View all
       </Link>
     </div>
   );

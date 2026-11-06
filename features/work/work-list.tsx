@@ -19,6 +19,9 @@ export const WorkList = () => {
       animate="show"
       className="pt-14 flex flex-col gap-y-6 max-w-2xl mx-auto "
     >
+      <h1 className="font-mono text-xs uppercase tracking-wider text-neutral-400">
+        Work
+      </h1>
       {WORK_NEWEST_FIRST.map((workUnit) => {
         return <WorkRow key={workUnit.id} {...workUnit} />;
       })}
