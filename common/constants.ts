@@ -175,8 +175,8 @@ export const EXPERIENCES: TExperiences[] = [
   {
     year: "2023 - 2023",
     role: "Frontend Developer",
-    company: "Healthcare AI Chatbot · Hackathon",
-
+    company: "Healthcare AI Chatbot",
+    location: "Hackathon",
     description: [
       "Built an AI healthcare chatbot from scratch with a team of four.",
       "Developed a user-friendly React interface and integrated backend services for chatbot interactions.",
@@ -186,8 +186,8 @@ export const EXPERIENCES: TExperiences[] = [
   {
     year: "2023",
     role: "Frontend Developer",
-    company: "AI Meeting Summarizer · Hackathon",
-
+    company: "AI Meeting Summarizer",
+    location: "Hackathon",
     description: [
       "Built an AI meeting assistant for real-time transcription and automated summaries.",
       "Created interfaces for processing conversations across different languages.",

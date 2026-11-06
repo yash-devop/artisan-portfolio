@@ -19,7 +19,7 @@ export const ExperienceSection = ({ slice }: { slice?: number }) => {
               </div>
             </div>
 
-            <div className="col-span-8">
+            <div className="col-span-8 pt-1">
               <div className="flex justify-between items-center">
                 <span className="text-sm font-medium text-black">
                   {experience.company}
