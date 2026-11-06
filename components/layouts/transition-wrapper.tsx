@@ -35,7 +35,7 @@ export const TransitionWrapper = ({
             opacity: 0,
             filter: "blur(5px)",
           }}
-          className="w-full"
+          className="w-full h-full"
         >
           {children}
         </motion.div>
