@@ -10,7 +10,7 @@ export default function SiteLayout({
     <div className="max-w-2xl mx-auto w-full px-4 pt-8">
       <Navbar />
       <Designation />
-      {children}
+      <main>{children}</main>
     </div>
   );
 }

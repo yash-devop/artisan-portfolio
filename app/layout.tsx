@@ -1,11 +1,20 @@
+import { TransitionWrapper } from "@/components/layouts/transition-wrapper";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import {
+  DEFAULT_OG_IMAGE,
+  SITE_DESCRIPTION,
+  SITE_KEYWORDS,
+  SITE_NAME,
+  SITE_TITLE,
+  SITE_URL,
+  SOCIAL_LINKS,
+} from "@/lib/seo";
+import { cn } from "@/lib/utils";
+import { Analytics } from "@vercel/analytics/next";
+import { AnimatePresence, LayoutGroup } from "motion/react";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Instrument_Serif, Inter } from "next/font/google";
 import "./globals.css";
-import { AnimatePresence, LayoutGroup } from "motion/react";
-import { cn } from "@/lib/utils";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { Analytics } from "@vercel/analytics/next";
-import { TransitionWrapper } from "@/components/layouts/transition-wrapper";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -25,41 +34,56 @@ const InstrumentSerif = Instrument_Serif({
   weight: ["400"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: "Yash Kamble - Developer",
-  description:
-    "Yash Kamble - full-stack developer portfolio showcasing projects, skills, and experience.",
-  authors: [
-    { name: "Yash Kamble", url: "https://www.linkedin.com/in/yash-dev/" },
-  ],
-  alternates: { canonical: "/" },
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: SITE_TITLE,
+    template: `%s - ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  keywords: SITE_KEYWORDS,
+  authors: [{ name: SITE_NAME, url: SOCIAL_LINKS.linkedin }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
+  category: "technology",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "/",
-    siteName: "Yash Kamble",
-    title: "Yash Kamble - Developer",
-    description:
-      "Yash Kamble - full-stack developer portfolio showcasing projects, skills, and experience.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Yash Kamble - Developer",
-      },
-    ],
+    siteName: SITE_NAME,
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Yash Kamble - Developer",
-    description:
-      "Yash Kamble - full-stack developer portfolio showcasing projects, skills, and experience.",
-    images: ["/og-image.png"],
-    creator: "https://x.com/yash_devop",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: [DEFAULT_OG_IMAGE.url],
+    creator: "@yash_devop",
+    site: "@yash_devop",
+  },
+  robots: {
+    follow: true,
+    index: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  verification: {
+    ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+      ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+      : {}),
+    ...(process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
+      ? {
+          other: {
+            "msvalidate.01": process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION,
+          },
+        }
+      : {}),
   },
 };
 
