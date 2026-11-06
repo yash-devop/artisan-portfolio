@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { GithubIcon } from "@/components/icons/github";
 import { GoogleIcon } from "@/components/icons/google";
 import { SlackWordmarkIcon } from "@/components/icons/slack";
@@ -6,6 +7,9 @@ import { SupabaseWordmarkIcon } from "@/components/icons/supabase";
 import { VercelWordMarkIcon } from "@/components/icons/vercel-wordmark";
 import AnimatedGrid from "./randomized-dots";
 import { BlockWrapper } from "@/components/layouts/block-wrapper";
+import { craftMetadata } from "@/lib/crafts-seo";
+
+export const metadata: Metadata = craftMetadata("/crafts/30days/day1-login");
 
 export default function Day1LoginPage() {
   return (

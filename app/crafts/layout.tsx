@@ -3,7 +3,7 @@ import { CraftsSidebar } from "@/features/crafts";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Artisan - Crafts by Yash",
+  title: "Crafts by Yash",
   description: "Crisp, handcrafted reusable UI components by Yash Kamble",
 };
 export default function CraftsLayout({

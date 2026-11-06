@@ -1,5 +1,9 @@
+import type { Metadata } from "next";
 import { BlockWrapper } from "@/components/layouts/block-wrapper";
+import { craftMetadata } from "@/lib/crafts-seo";
 import { WorkspaceBlock, type TWorkspaceBlockTone } from "./workspace-block";
+
+export const metadata: Metadata = craftMetadata("/crafts/30days/day3-iconstack");
 
 const BLOCKS: TWorkspaceBlockTone[] = ["neutral", "emerald"];
 

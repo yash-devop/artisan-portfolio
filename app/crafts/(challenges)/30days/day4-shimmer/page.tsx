@@ -1,10 +1,14 @@
+import type { Metadata } from "next";
 import {
   IconArrowRight,
   IconArrowUpRight,
   IconSearch,
 } from "@tabler/icons-react";
 import { BlockWrapper } from "@/components/layouts/block-wrapper";
+import { craftMetadata } from "@/lib/crafts-seo";
 import ShimmerComponent from "@/app/crafts/(components)/shimmer/shimmer";
+
+export const metadata: Metadata = craftMetadata("/crafts/30days/day4-shimmer");
 
 const EYEBROW =
   "font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-500";

@@ -1,5 +1,9 @@
+import type { Metadata } from "next";
 import { BlockWrapper } from "@/components/layouts/block-wrapper";
+import { craftMetadata } from "@/lib/crafts-seo";
 import ShimmerComponent from "./shimmer";
+
+export const metadata: Metadata = craftMetadata("/crafts/shimmer");
 
 export default function ShimmerPage() {
   return (
