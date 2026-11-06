@@ -1,100 +1,65 @@
-"use client";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { WORK } from "@/common/constants";
-import { formatMonthYear } from "@/lib/work-date";
-import { useParams } from "next/navigation";
-import { motion } from "motion/react";
-import Image from "next/image";
-import Link from "next/link";
-export default function SpecificWorkPage() {
-  const { id } = useParams<{ id: string }>();
+import { WorkDetail } from "@/features/work";
 
-  const work = WORK.filter((workUnit) => workUnit.id === Number(id))[0];
+type TWorkPageProps = {
+  params: Promise<{ id: string }>;
+};
 
-  return (
-    <motion.div className="py-10">
-      <motion.div
-        layout="position"
-        layoutId={`work-title-${work.id}`}
-        transition={{
-          layout: {
-            type: "spring",
-            stiffness: 250,
-            damping: 30,
-            duration: 1,
-          },
-          duration: 1,
-        }}
-        className="flex flex-col gap-0.5 pb-4"
-      >
-        <span className="font-medium">{work.name}</span>
-        <span className="text-neutral-500">{work.description}</span>
-      </motion.div>
-      <div className="flex items-center gap-2 pb-1 text-xs font-mono text-neutral-400">
-        <span>Built {formatMonthYear(work.createdAt)}</span>
-        <span className="text-neutral-300">·</span>
-        <span>Updated {formatMonthYear(work.updatedAt)}</span>
-      </div>
-      <div className="text-sm underline underline-offset-2 space-x-4 py-5 px-0.5">
-        {work.links?.github && (
-          <Link href={work.links?.github} className="" target="_blank">
-            <span>Github</span>
-          </Link>
-        )}
-        {work.links?.live_link && (
-          <Link
-            href={work.links?.live_link}
-            className="hover:brightness-125"
-            target="_blank"
-          >
-            <span>Live Link</span>
-          </Link>
-        )}
-        {work.links?.other && (
-          <Link
-            href={work.links?.other}
-            className="hover:brightness-125"
-            target="_blank"
-          >
-            <span>Visit</span>
-          </Link>
-        )}
-        {work.links?.twitter && (
-          <Link
-            href={work.links?.twitter}
-            className="hover:brightness-125"
-            target="_blank"
-          >
-            <span>Twitter ( Highly active )</span>
-          </Link>
-        )}
-        {work.links?.linkedin && (
-          <Link
-            href={work.links?.linkedin}
-            className="hover:brightness-125"
-            target="_blank"
-          >
-            <span>Linkedin</span>
-          </Link>
-        )}
-      </div>
-      <div className="space-y-5">
-        {work.images.map((image, idx) => (
-          <motion.div
-            key={image + idx}
-            layout
-            layoutId={`work-images-${id}-${idx}`}
-          >
-            <Image
-              src={image}
-              alt=""
-              width={20}
-              height={10}
-              unoptimized
-              className="w-full shadow-lg rounded-md p-px border border-neutral-300 bg-white"
-            />
-          </motion.div>
-        ))}
-      </div>
-    </motion.div>
-  );
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return WORK.map((work) => ({ id: String(work.id) }));
+}
+
+export async function generateMetadata({
+  params,
+}: TWorkPageProps): Promise<Metadata> {
+  const { id } = await params;
+  const work = WORK.find((item) => item.id === Number(id));
+
+  if (!work) return {};
+
+  const description =
+    work.description ??
+    work.thumbnailDescription ??
+    `${work.name} by Yash Kamble`;
+
+  return {
+    title: work.name,
+    description,
+    alternates: { canonical: `/work/${work.id}` },
+    openGraph: {
+      type: "article",
+      title: work.name,
+      description,
+      url: `/work/${work.id}`,
+      publishedTime: work.createdAt,
+      modifiedTime: work.updatedAt,
+      images: [
+        {
+          url: work.thumbnail,
+          alt: `${work.name} project preview`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: work.name,
+      description,
+      images: [work.thumbnail],
+      creator: "@yash_devop",
+      site: "@yash_devop",
+    },
+  };
+}
+
+export default async function SpecificWorkPage({ params }: TWorkPageProps) {
+  const { id } = await params;
+  const work = WORK.find((item) => item.id === Number(id));
+
+  if (!work) notFound();
+
+  return <WorkDetail work={work} />;
 }

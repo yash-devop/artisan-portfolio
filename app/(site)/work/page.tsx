@@ -1,27 +1,13 @@
-"use client";
-import { WORK_NEWEST_FIRST } from "@/common/constants";
-import { WorkRow } from "@/features/work/work-row";
-import { motion } from "motion/react";
+import { WorkList } from "@/features/work";
+import { Metadata } from "next";
 
-const container = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
+export const metadata: Metadata = {
+  title: "Work",
+  description:
+    "Selected projects by Yash Kamble — developer tools, SaaS products, and frontend systems.",
+  alternates: { canonical: "/work" },
 };
+
 export default function WorkPage() {
-  return (
-    <motion.div
-      variants={container}
-      initial="hidden"
-      animate="show"
-      className="pt-14 flex flex-col gap-y-6 max-w-2xl mx-auto "
-    >
-      {WORK_NEWEST_FIRST.map((workUnit, idx) => {
-        return <WorkRow key={workUnit.id} {...workUnit} idx={idx} />;
-      })}
-    </motion.div>
-  );
+  return <WorkList />;
 }
