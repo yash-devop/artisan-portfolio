@@ -1,14 +1,29 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SIDEBAR_DATA } from "@/common/constants";
+import { JsonLd } from "@/components/seo/json-ld";
 import { CRAFT_SEO, craftMetadata } from "@/lib/crafts-seo";
+import {
+  breadcrumbSchema,
+  craftsCollectionSchema,
+} from "@/lib/structured-data";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = craftMetadata("/crafts");
 
 export default function CraftsPage() {
   return (
-    <div className="mx-auto w-full max-w-4xl p-6 md:p-10">
+    <>
+      <JsonLd
+        data={[
+          craftsCollectionSchema,
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Crafts", path: "/crafts" },
+          ]),
+        ]}
+      />
+      <div className="mx-auto w-full max-w-4xl p-6 md:p-10">
       <h1 className="font-instrument-serif text-4xl italic">Crafts</h1>
       <p className="mt-3 max-w-xl text-sm text-neutral-400">
         Handcrafted UI components, interaction studies, and daily frontend
@@ -47,6 +62,7 @@ export default function CraftsPage() {
           </section>
         ))}
       </div>
-    </div>
+      </div>
+    </>
   );
 }

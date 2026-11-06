@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { WORK } from "@/common/constants";
+import { JsonLd } from "@/components/seo/json-ld";
 import { WorkDetail } from "@/features/work";
+import { breadcrumbSchema, creativeWorkSchema } from "@/lib/structured-data";
 
 type TWorkPageProps = {
   params: Promise<{ id: string }>;
@@ -61,5 +63,19 @@ export default async function SpecificWorkPage({ params }: TWorkPageProps) {
 
   if (!work) notFound();
 
-  return <WorkDetail work={work} />;
+  return (
+    <>
+      <JsonLd
+        data={[
+          creativeWorkSchema(work),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Work", path: "/work" },
+            { name: work.name, path: `/work/${work.id}` },
+          ]),
+        ]}
+      />
+      <WorkDetail work={work} />
+    </>
+  );
 }

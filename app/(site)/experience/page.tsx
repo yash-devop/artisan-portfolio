@@ -1,4 +1,6 @@
+import { JsonLd } from "@/components/seo/json-ld";
 import { ExperienceSection } from "@/features/experience";
+import { breadcrumbSchema } from "@/lib/structured-data";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,8 +12,16 @@ export const metadata: Metadata = {
 
 export default function ExperiencePage() {
   return (
-    <div className="py-10">
-      <ExperienceSection />
-    </div>
+    <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Experience", path: "/experience" },
+        ])}
+      />
+      <div className="py-10">
+        <ExperienceSection />
+      </div>
+    </>
   );
 }
