@@ -86,6 +86,12 @@ export const CRAFT_SEO = {
       "A sequential task list with animated progress timers for onboarding and setup flows.",
     index: true,
   },
+  "/crafts/30days/day6-statcounter": {
+    title: "Day 6 Stat Counter — Crafts by Yash",
+    description:
+      "An animated stat counter with staggered count-up motion for dashboards, metrics, and product highlights.",
+    index: true,
+  },
 } as const satisfies Record<string, TCraftSeo>;
 
 export const craftMetadata = (

@@ -453,6 +453,11 @@ const SIDEBAR_GROUPS: {
         slug: "/crafts/30days",
         href: "/day5-tasklist",
       },
+      {
+        name: "Day6-StatCounter",
+        slug: "/crafts/30days",
+        href: "/day6-statcounter",
+      },
     ],
   },
 ];
