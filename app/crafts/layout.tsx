@@ -1,5 +1,5 @@
 import { SidebarProvider } from "@/components/ui/sidebar";
-import { CraftsSidebar } from "@/features/crafts/crafts-sidebar";
+import { CraftsSidebar } from "@/features/crafts";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

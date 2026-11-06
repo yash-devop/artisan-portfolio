@@ -1,8 +1,8 @@
-import { CopyEmail } from "@/features/home/copy-email";
+import { CopyEmail } from "./copy-email";
 import { DottedUnderline } from "@/components/dotted-underline";
-import { ExperienceSection } from "@/features/experience/experience";
-import { TechStackSection } from "@/features/tech-stack/tech-stack";
-import { WorkSection } from "@/features/work/work-section";
+import { ExperienceSection } from "@/features/experience";
+import { TechStackSection } from "@/features/tech-stack";
+import { WorkSection } from "@/features/work";
 import { SectionWrapper } from "@/components/layouts/section-wrapper";
 import { IconBrandLinkedin, IconBrandX, IconMail } from "@tabler/icons-react";
 import Link from "next/link";

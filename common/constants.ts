@@ -11,18 +11,18 @@ import {
   IconProps,
 } from "@tabler/icons-react";
 import { ForwardRefExoticComponent, RefAttributes } from "react";
-import { AmazonAwsIcon } from "../components/icons/aws";
-import { FigmaIcon } from "../components/icons/figma";
-import { MongodbWordmarkIcon } from "../components/icons/mongo";
-import { NextjsIcon } from "../components/icons/next";
-import { NodejsIcon } from "../components/icons/node";
-import { RazorpayIcon } from "../components/icons/razorpay";
-import { ReactIcon } from "../components/icons/react";
-import { ReactQueryIcon } from "../components/icons/react-query";
-import { ReduxIcon } from "../components/icons/redux";
-import { TailwindIcon } from "../components/icons/tailwind";
-import { TurborepoIcon } from "../components/icons/turbo-repo";
-import { VercelIcon } from "../components/icons/vercel";
+import { AmazonAwsIcon } from "@/components/icons/aws";
+import { FigmaIcon } from "@/components/icons/figma";
+import { MongodbWordmarkIcon } from "@/components/icons/mongo";
+import { NextjsIcon } from "@/components/icons/next";
+import { NodejsIcon } from "@/components/icons/node";
+import { RazorpayIcon } from "@/components/icons/razorpay";
+import { ReactIcon } from "@/components/icons/react";
+import { ReactQueryIcon } from "@/components/icons/react-query";
+import { ReduxIcon } from "@/components/icons/redux";
+import { TailwindIcon } from "@/components/icons/tailwind";
+import { TurborepoIcon } from "@/components/icons/turbo-repo";
+import { VercelIcon } from "@/components/icons/vercel";
 import { TExperiences, TWork } from "./types";
 export const NAV_ROUTES = [
   {

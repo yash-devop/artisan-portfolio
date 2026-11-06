@@ -4,7 +4,7 @@ import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "../../components/ui/tooltip";
+} from "@/components/ui/tooltip";
 
 import { ICONS } from "@/common/constants";
 import { TStack } from "@/common/types";
