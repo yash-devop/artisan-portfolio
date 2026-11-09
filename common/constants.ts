@@ -50,7 +50,7 @@ export const NAV_ROUTES = [
 
 export const EXPERIENCES: TExperiences[] = [
   {
-    year: "2025 — NOW",
+    year: "Feb 2025 — July 2026",
     role: "Frontend Engineer",
     company: "Fyntune Solutions",
     location: "Turbhe , Navi Mumbai",
@@ -85,10 +85,9 @@ export const EXPERIENCES: TExperiences[] = [
     ],
 
     description: [
-      "Building financial products and onboarding experiences used across 10+ broker platforms.",
-      "Designed scalable UI systems and reusable components focused on better developer experience.",
-      "Improved application performance by migrating legacy React codebases to Vite, reducing build times by 50%.",
-      "Worked closely with product teams to turn ideas into polished, production-ready experiences.",
+      "Owned frontend architecture and feature delivery for a multimodule SaaS messaging platform built with React, TypeScript, Redux and TanStack Query.",
+      "Modernized legacy modules, built React Flow-based workflow builders and reusable dashboards, and deployed an Astro-based marketing website with Cloudflare routing.",
+      "Used Claude Code to assist with development, debugging, and refactoring.",
     ],
   },
 
