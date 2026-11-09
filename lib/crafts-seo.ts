@@ -92,6 +92,12 @@ export const CRAFT_SEO = {
       "An animated stat counter with staggered count-up motion for dashboards, metrics, and product highlights.",
     index: true,
   },
+  "/crafts/30days/day7-tabs": {
+    title: "Day 7 Tabs — Crafts by Yash",
+    description:
+      "Accessible tab components with sliding indicators in pill and underline variants, built with React and Base UI.",
+    index: true,
+  },
 } as const satisfies Record<string, TCraftSeo>;
 
 export const craftMetadata = (
