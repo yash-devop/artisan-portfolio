@@ -104,6 +104,12 @@ export const CRAFT_SEO = {
       "A warm, mail-client style sidebar with searchable workspaces, account switching, and a collapsible icon rail.",
     index: true,
   },
+  "/crafts/30days/day9-labels": {
+    title: "Day 9 Labels — Crafts by Yash",
+    description:
+      "Compact status labels with tone variants, icons, and reusable priority indicators built with React and Tailwind.",
+    index: true,
+  },
 } as const satisfies Record<string, TCraftSeo>;
 
 export const craftMetadata = (
