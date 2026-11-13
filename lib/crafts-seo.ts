@@ -98,6 +98,12 @@ export const CRAFT_SEO = {
       "Accessible tab components with sliding indicators in pill and underline variants, built with React and Base UI.",
     index: true,
   },
+  "/crafts/30days/day8-slothsidebar": {
+    title: "Day 8 Sloth Sidebar — Crafts by Yash",
+    description:
+      "A warm, mail-client style sidebar with searchable workspaces, account switching, and a collapsible icon rail.",
+    index: true,
+  },
 } as const satisfies Record<string, TCraftSeo>;
 
 export const craftMetadata = (

@@ -462,6 +462,11 @@ const SIDEBAR_GROUPS: {
         slug: "/crafts/30days",
         href: "/day7-tabs",
       },
+      {
+        name: "Day8-SlothSidebar",
+        slug: "/crafts/30days",
+        href: "/day8-slothsidebar",
+      },
     ],
   },
 ];
