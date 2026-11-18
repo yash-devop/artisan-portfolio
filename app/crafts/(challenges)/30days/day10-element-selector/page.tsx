@@ -29,7 +29,7 @@ export default function Day10ElementSelector() {
   return (
     <BlockWrapper className="items-center justify-center p-6">
       <div className="flex items-center justify-center max-w-lg w-full leading-relaxed">
-        <h1 className="font-sans text-neutral-400">
+        <h1 className="font-sans text-neutral-400 cursor-default">
           A{" "}
           <SelectorElement
             current={current}
@@ -90,7 +90,10 @@ export const SelectorElement = ({
     <p
       data-presence={name}
       data-active={current?.isActive}
-      className={cn(`inline-block relative px-0.5`, className)}
+      className={cn(
+        `inline-block relative z-10 px-0.5 cursor-default`,
+        className,
+      )}
       onMouseEnter={(e) => {
         if (!setCurrent) return;
 
@@ -109,49 +112,49 @@ export const SelectorElement = ({
       {current?.name === name && current?.isActive ? (
         <motion.div
           // layout=""
-          layoutId="jod"
+          layoutId="element-selector"
           className={cn(
-            "absolute top-0 bottom-0 left-1/2 -translate-x-1/2 border w-full",
+            "absolute top-0 bottom-0 left-1/2 -translate-x-1/2 border w-full z-[-1]",
             ACCENTS[accent].border,
           )}
           transition={{
             ease: "easeInOut",
-            // damping: 0.1,
+            damping: 0.1,
             duration: 0.3,
           }}
         >
-          <div
+          <motion.div
             className={cn(
               "absolute -top-[3px] -left-[3px] size-1 border",
               ACCENTS[accent].border,
             )}
           />
-          <div
+          <motion.div
             className={cn(
               "absolute -top-[3px] -right-[3px] size-1 border",
               ACCENTS[accent].border,
             )}
           />
-          <div
+          <motion.div
             className={cn(
               "absolute -bottom-[3px] -left-[3px] size-1 border",
               ACCENTS[accent].border,
             )}
           />
-          <div
+          <motion.div
             className={cn(
               "absolute -bottom-[3px] -right-[3px] size-1 border",
               ACCENTS[accent].border,
             )}
           />
-          <div
+          <motion.div
             className={cn(
               "text-white w-fit absolute -bottom-5 left-1/2 -translate-x-1/2 text-[11px] leading-4 font-mono px-1 rounded-2xl",
               ACCENTS[accent].badge,
             )}
           >
             {current.meta.width}x{current.meta.height}
-          </div>
+          </motion.div>
         </motion.div>
       ) : null}
     </p>
