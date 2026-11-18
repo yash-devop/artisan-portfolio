@@ -110,6 +110,12 @@ export const CRAFT_SEO = {
       "Compact status labels with tone variants, icons, and reusable priority indicators built with React and Tailwind.",
     index: true,
   },
+  "/crafts/30days/day10-element-selector": {
+    title: "Day 10 Element Selector — Crafts by Yash",
+    description:
+      "A Figma-style selection box that highlights elements on hover and locks in a measured selection outline.",
+    index: true,
+  },
 } as const satisfies Record<string, TCraftSeo>;
 
 export const craftMetadata = (
