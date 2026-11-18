@@ -4,13 +4,16 @@ import { cn } from "@/lib/utils";
 import React, { useState } from "react";
 import { motion } from "motion/react";
 
+type TSize = {
+  width: number;
+  height: number;
+};
+
 type PresenceElement = {
   name: string;
   isActive: boolean;
-  meta: {
-    width: number;
-    height: number;
-  };
+  meta: TSize;
+  from: TSize;
 };
 
 const ACCENTS = {
@@ -105,14 +108,26 @@ export const SelectorElement = ({
             width: Math.round(width),
             height: Math.round(height),
           },
+          from: current?.meta ?? {
+            width: Math.round(width),
+            height: Math.round(height),
+          },
         });
       }}
     >
       {name}
       {current?.name === name && current?.isActive ? (
         <motion.div
-          // layout=""
+          layout="position"
           layoutId="element-selector"
+          initial={{
+            width: current.from.width,
+            height: current.from.height,
+          }}
+          animate={{
+            width: current.meta.width,
+            height: current.meta.height,
+          }}
           className={cn(
             "absolute top-0 bottom-0 left-1/2 -translate-x-1/2 border w-full z-[-1]",
             ACCENTS[accent].border,
