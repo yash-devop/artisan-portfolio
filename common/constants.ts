@@ -472,6 +472,11 @@ const SIDEBAR_GROUPS: {
         slug: "/crafts/30days",
         href: "/day9-labels",
       },
+      {
+        name: "Day10-ElementSelector",
+        slug: "/crafts/30days",
+        href: "/day10-element-selector",
+      },
     ],
   },
 ];
