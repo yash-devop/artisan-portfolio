@@ -116,6 +116,12 @@ export const CRAFT_SEO = {
       "A Figma-style selection box that highlights elements on hover and locks in a measured selection outline.",
     index: true,
   },
+  "/crafts/30days/day11-border-beam": {
+    title: "Day 11 Border Beam — Crafts by Yash",
+    description:
+      "A CSS-only border beam that spins a conic gradient around any container, with a soft glow and reduced-motion support.",
+    index: true,
+  },
 } as const satisfies Record<string, TCraftSeo>;
 
 export const craftMetadata = (
