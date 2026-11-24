@@ -482,6 +482,11 @@ const SIDEBAR_GROUPS: {
         slug: "/crafts/30days",
         href: "/day11-border-beam",
       },
+      {
+        name: "Day12-StartDone",
+        slug: "/crafts/30days",
+        href: "/day12-start-done",
+      },
     ],
   },
 ];
