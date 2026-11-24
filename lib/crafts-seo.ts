@@ -122,6 +122,12 @@ export const CRAFT_SEO = {
       "A CSS-only border beam that spins a conic gradient around any container, with a soft glow and reduced-motion support.",
     index: true,
   },
+  "/crafts/30days/day12-sloth-inbox": {
+    title: "Day 12 Sloth Inbox — Crafts by Yash",
+    description:
+      "A sloth-themed inbox UI concept showcasing warm visual styling and clean layout composition.",
+    index: true,
+  },
   "/crafts/30days/day13-start-done": {
     title: "Day 13 Start and Done State — Crafts by Yash",
     description:

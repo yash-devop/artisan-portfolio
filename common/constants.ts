@@ -483,6 +483,11 @@ const SIDEBAR_GROUPS: {
         href: "/day11-border-beam",
       },
       {
+        name: "Day12-SlothInbox",
+        slug: "/crafts/30days",
+        href: "/day12-sloth-inbox",
+      },
+      {
         name: "Day13-StartDone",
         slug: "/crafts/30days",
         href: "/day13-start-done",
