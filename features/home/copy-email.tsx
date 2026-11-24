@@ -24,10 +24,10 @@ export const CopyEmail = ({
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   return (
-    <AnimatePresence>
+    <AnimatePresence mode="wait">
       {isCopied ? (
         <motion.div
-          key={"check-icon-email"}
+          key="check-icon-email"
           initial={{
             opacity: 0,
             filter: "blur(10px)",
@@ -35,6 +35,10 @@ export const CopyEmail = ({
           animate={{
             opacity: 1,
             filter: "blur(0px)",
+          }}
+          exit={{
+            opacity: 0,
+            filter: "blur(10px)",
           }}
           className="space-x-2"
         >
@@ -45,6 +49,7 @@ export const CopyEmail = ({
         </motion.div>
       ) : (
         <motion.div
+          key="copy-email"
           initial={{
             opacity: 0,
             filter: "blur(10px)",
@@ -52,6 +57,10 @@ export const CopyEmail = ({
           animate={{
             opacity: 1,
             filter: "blur(0px)",
+          }}
+          exit={{
+            opacity: 0,
+            filter: "blur(10px)",
           }}
           className="space-x-1.5 text-sm text-neutral-500 cursor-pointer w-fit"
           onClick={() => copyClipboard(email)}
