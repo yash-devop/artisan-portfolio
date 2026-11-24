@@ -12,7 +12,7 @@ import {
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
 
-export default function Day12StartDone() {
+export default function Day13StartDone() {
   const [isQueued, setIsQueued] = useState(false);
   const [animationComplete, setAnimationComplete] = useState(false);
 

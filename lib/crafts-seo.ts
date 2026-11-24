@@ -122,8 +122,8 @@ export const CRAFT_SEO = {
       "A CSS-only border beam that spins a conic gradient around any container, with a soft glow and reduced-motion support.",
     index: true,
   },
-  "/crafts/30days/day12-start-done": {
-    title: "Day 12 Start and Done State — Crafts by Yash",
+  "/crafts/30days/day13-start-done": {
+    title: "Day 13 Start and Done State — Crafts by Yash",
     description:
       "An interactive start-to-done state transition with spring motion and status feedback, built entirely with span elements.",
     index: true,

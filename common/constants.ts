@@ -483,9 +483,9 @@ const SIDEBAR_GROUPS: {
         href: "/day11-border-beam",
       },
       {
-        name: "Day12-StartDone",
+        name: "Day13-StartDone",
         slug: "/crafts/30days",
-        href: "/day12-start-done",
+        href: "/day13-start-done",
       },
     ],
   },
